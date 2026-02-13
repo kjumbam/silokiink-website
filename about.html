@@ -1,0 +1,1219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - SilokiInk LLC</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px; /* Account for sticky nav */
+        }
+
+        /* Smooth Scroll for Anchor Links */
+        a[href^="#"] {
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --navy: #2c4a6b;
+            --light-navy: #3d5a7a;
+            --gold: #c9a961;
+            --cream: #f8f6f0;
+            --white: #ffffff;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --dark-navy: #1f3247;
+            --gold-light: #d4b76f;
+            --gold-dark: #b38a4f;
+            
+            /* Gradient Definitions */
+            --gradient-navy: linear-gradient(135deg, #2c4a6b 0%, #1f3247 100%);
+            --gradient-navy-reverse: linear-gradient(135deg, #3d5a7a 0%, #2c4a6b 100%);
+            --gradient-gold: linear-gradient(135deg, #c9a961 0%, #d4b76f 100%);
+            --gradient-cream: linear-gradient(180deg, #ffffff 0%, #f8f6f0 100%);
+            
+            /* Spacing Scale */
+            --space-xs: 0.5rem;   /* 8px */
+            --space-sm: 1rem;     /* 16px */
+            --space-md: 1.5rem;   /* 24px */
+            --space-lg: 2.5rem;   /* 40px */
+            --space-xl: 4rem;     /* 64px */
+            --space-2xl: 6rem;    /* 96px */
+            --space-3xl: 8rem;    /* 128px */
+        }
+
+        /* Enhanced Body Text */
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.75; /* Improved from 1.6 */
+            color: var(--text-dark);
+            background-color: var(--cream);
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Enhanced Headings */
+        h1, .hero h1, .page-header h1 {
+            font-family: 'Garamond', serif;
+            font-weight: 400;
+            line-height: 1.2;
+            letter-spacing: -0.8px; /* Tighter for elegance */
+        }
+
+        h2, .section-title {
+            font-family: 'Garamond', serif;
+            font-weight: 400;
+            line-height: 1.3;
+            letter-spacing: -0.4px;
+            margin-bottom: 1.5rem;
+        }
+
+        h3 {
+            font-family: 'Arial', sans-serif;
+            font-weight: 600;
+            line-height: 1.4;
+            letter-spacing: 0.3px;
+        }
+
+        /* Enhanced Paragraph Spacing */
+        p {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.85; /* More breathing room */
+            margin-bottom: 1.5rem;
+        }
+
+        /* Optimal Reading Width */
+        .about-section p,
+        .service-text p,
+        .faq-answer,
+        .intro-text p {
+            max-width: 70ch; /* Optimal line length */
+            line-height: 1.9;
+        }
+
+        /* Enhanced Link Underline Animation */
+        .nav-links a {
+            position: relative;
+            transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Enhanced Card Hover Effects */
+        .service-card,
+        .blog-card,
+        .testimonial,
+        .case-study {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+
+        .service-card::before,
+        .blog-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 10px;
+            background: linear-gradient(135deg, rgba(201, 169, 97, 0.1) 0%, transparent 100%);
+            opacity: 0;
+            transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            pointer-events: none;
+        }
+
+        .service-card:hover::before,
+        .blog-card:hover::before {
+            opacity: 1;
+        }
+
+        /* Enhanced Icon Hover */
+        .service-icon {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.15) rotate(-8deg);
+            filter: drop-shadow(0 8px 16px rgba(201, 169, 97, 0.3));
+        }
+
+        /* Enhanced Button Ripple Effect */
+        .cta-button {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .cta-button:hover::before {
+            width: 400px;
+            height: 400px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+        }
+
+        /* Enhanced Read More Links */
+        .read-more {
+            display: inline-block;
+            position: relative;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .read-more::after {
+            content: ' →';
+            transition: margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .read-more:hover::after {
+            margin-left: 0.5rem;
+        }
+
+        /* Animation Keyframes */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Apply Animations to Elements */
+        .hero {
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        .hero h1 {
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        .hero p {
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+
+        .cta-button {
+            animation: fadeInUp 0.8s ease-out 0.6s both;
+        }
+
+        .service-card,
+        .blog-card,
+        .testimonial,
+        .value-card {
+            animation: fadeInUp 0.6s ease-out both;
+        }
+
+        .service-card:nth-child(1),
+        .blog-card:nth-child(1) { animation-delay: 0.1s; }
+        .service-card:nth-child(2),
+        .blog-card:nth-child(2) { animation-delay: 0.2s; }
+        .service-card:nth-child(3),
+        .blog-card:nth-child(3) { animation-delay: 0.3s; }
+        .service-card:nth-child(4),
+        .blog-card:nth-child(4) { animation-delay: 0.4s; }
+        .service-card:nth-child(5),
+        .blog-card:nth-child(5) { animation-delay: 0.5s; }
+
+        .section-title {
+            animation: fadeInUp 0.7s ease-out both;
+        }
+
+        /* Accessibility - Respect Reduced Motion Preference */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* Section Spacing */
+        section:not(.hero):not(.cta-section):not(.page-header) {
+            padding: var(--space-2xl) 2rem;
+        }
+
+        .hero {
+            padding: var(--space-3xl) 2rem;
+        }
+
+        .page-header {
+            padding: var(--space-2xl) 2rem var(--space-xl);
+        }
+
+        /* Content Spacing */
+        .section-title {
+            margin-bottom: var(--space-xl);
+        }
+
+        h2 {
+            margin-top: var(--space-xl);
+            margin-bottom: var(--space-md);
+        }
+
+        h3 {
+            margin-top: var(--space-lg);
+            margin-bottom: var(--space-sm);
+        }
+
+        p {
+            margin-bottom: var(--space-md);
+        }
+
+        /* Grid Spacing */
+        .services-grid,
+        .blog-grid,
+        .testimonials-grid,
+        .values-grid {
+            gap: var(--space-lg);
+        }
+
+        /* Card Internal Spacing */
+        .service-card,
+        .blog-card,
+        .testimonial {
+            padding: var(--space-lg);
+            margin-bottom: var(--space-lg);
+        }
+
+        /* Responsive Spacing */
+        @media (max-width: 768px) {
+            section:not(.hero):not(.cta-section):not(.page-header) {
+                padding: var(--space-xl) 1.5rem;
+            }
+            
+            .hero {
+                padding: var(--space-2xl) 1.5rem;
+            }
+        }
+
+        /* Section Title Accent Line */
+        .section-title {
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 100%);
+            margin: 1rem auto 0;
+            border-radius: 2px;
+        }
+
+        /* Card Corner Accent */
+        .service-card::after,
+        .blog-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, rgba(201, 169, 97, 0.15) 0%, transparent 100%);
+            border-radius: 0 10px 0 0;
+            pointer-events: none;
+        }
+
+        /* Testimonial Quote Marks */
+        .testimonial-quote::before {
+            content: '"';
+            font-size: 5rem;
+            color: var(--gold);
+            opacity: 0.15;
+            font-family: 'Garamond', serif;
+            line-height: 0;
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        /* Hero Background Pattern */
+        .hero::before,
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(201, 169, 97, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero,
+        .page-header {
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Section Divider Lines */
+        section:not(.hero):not(.cta-section):not(.page-header)::before {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent 0%, var(--gold) 50%, transparent 100%);
+            margin: 0 auto var(--space-xl);
+        }
+
+        /* Hero & Header Text Shadows */
+        .hero h1,
+        .page-header h1 {
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero p,
+        .page-header p {
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Section Title Shadows */
+        .section-title {
+            text-shadow: 0 1px 2px rgba(44, 74, 107, 0.08);
+        }
+
+        /* Logo Shadow for Better Contrast */
+        .logo {
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Gold Text Glow Effect */
+        .blog-category,
+        .value-card h3:hover,
+        a:hover {
+            text-shadow: 0 0 20px rgba(201, 169, 97, 0.3);
+        }
+
+        /* Enhanced Navigation */
+        nav {
+            background: linear-gradient(135deg, #2c4a6b 0%, #1f3247 100%);
+            padding: 1.2rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 
+                0 2px 8px rgba(0, 0, 0, 0.1),
+                0 4px 16px rgba(44, 74, 107, 0.15);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(201, 169, 97, 0.15);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        /* Logo Enhancement */
+        .logo {
+            color: var(--white);
+            font-size: 2rem;
+            font-weight: 600;
+            text-decoration: none;
+            font-family: 'Garamond', serif;
+            letter-spacing: 0.5px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .logo:hover {
+            color: var(--gold);
+            transform: scale(1.05);
+        }
+
+        /* Nav Links Enhancement */
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            font-family: 'Arial', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a:hover {
+            color: var(--white);
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, #2c4a6b 0%, #1f3247 70%, #3d5a7a 100%);
+            color: var(--white);
+            padding: 5rem 2rem 3rem;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-family: 'Garamond', serif;
+        }
+
+        /* About Content */
+        .about-section {
+            padding: 6rem 2rem;
+            background-color: var(--white);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .about-section h2 {
+            color: var(--navy);
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            font-family: 'Garamond', serif;
+        }
+
+        .about-section p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+            font-family: 'Arial', sans-serif;
+            line-height: 1.8;
+        }
+
+        /* Values Section */
+        .values-section {
+            padding: 6rem 2rem;
+            background-color: var(--cream);
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            max-width: 1000px;
+            margin: 3rem auto 0;
+        }
+
+        .value-card {
+            text-align: center;
+        }
+
+        .value-icon {
+            font-size: 3rem;
+            color: var(--navy);
+            margin-bottom: 1rem;
+        }
+
+        .value-card h3 {
+            color: var(--navy);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .value-card p {
+            color: var(--text-light);
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* Team Section */
+        .team-section {
+            padding: 6rem 2rem;
+            background-color: var(--white);
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--navy);
+            margin-bottom: 2rem;
+            font-family: 'Garamond', serif;
+        }
+
+        .team-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .team-content p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+            font-family: 'Arial', sans-serif;
+            line-height: 1.8;
+        }
+
+        /* Team Members Section */
+        .team-members {
+            max-width: 1100px;
+            margin: 4rem auto 0;
+            padding: 0 2rem;
+        }
+
+        .team-member {
+            background-color: var(--cream);
+            padding: 3rem;
+            margin-bottom: 3rem;
+            border-radius: 8px;
+            text-align: left;
+            box-shadow: 
+                0 1px 3px rgba(0, 0, 0, 0.05),
+                0 4px 12px rgba(44, 74, 107, 0.08),
+                0 8px 24px rgba(44, 74, 107, 0.05);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .team-member:hover {
+            box-shadow: 
+                0 8px 16px rgba(0, 0, 0, 0.08),
+                0 16px 32px rgba(44, 74, 107, 0.12),
+                0 24px 48px rgba(44, 74, 107, 0.08);
+            transform: translateY(-8px);
+        }
+
+        .team-member h3 {
+            color: var(--navy);
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            font-family: 'Garamond', serif;
+        }
+
+        .team-member .title {
+            color: var(--gold);
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .team-member p {
+            color: var(--text-dark);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            font-family: 'Arial', sans-serif;
+            text-align: justify;
+        }
+
+        .team-member p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #1f3247 0%, #2c4a6b 50%, #3d5a7a 100%);
+            color: var(--white);
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-family: 'Garamond', serif;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* Enhanced Primary Button */
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #c9a961 0%, #d4b76f 100%);
+            color: var(--navy);
+            padding: 1.2rem 3rem;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1.05rem;
+            letter-spacing: 0.5px;
+            font-family: 'Arial', sans-serif;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+        }
+
+        .cta-button:active {
+            transform: translateY(-1px);
+        }
+
+        /* Secondary Button (if exists) */
+        .submit-button {
+            background: linear-gradient(135deg, #2c4a6b 0%, #3d5a7a 100%);
+            color: var(--white);
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            font-family: 'Arial', sans-serif;
+            box-shadow: 0 4px 12px rgba(44, 74, 107, 0.3);
+        }
+
+        .submit-button:hover {
+            background: linear-gradient(135deg, #3d5a7a 0%, #2c4a6b 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(44, 74, 107, 0.4);
+        }
+
+        /* Subtle Texture on Dark Sections */
+        .hero::after,
+        .page-header::after,
+        .cta-section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                repeating-linear-gradient(
+                    0deg,
+                    rgba(255, 255, 255, 0.03) 0px,
+                    transparent 1px,
+                    transparent 2px,
+                    rgba(255, 255, 255, 0.03) 3px
+                );
+            pointer-events: none;
+            opacity: 0.4;
+            z-index: 1;
+        }
+
+        .hero > *,
+        .page-header > *,
+        .cta-section > * {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Enhanced Section Backgrounds */
+        .services,
+        .about-section,
+        .portfolio-section,
+        .faq-section {
+            background: linear-gradient(180deg, var(--white) 0%, var(--cream) 50%, var(--white) 100%);
+        }
+
+        .about,
+        .testimonials-section,
+        .values-section,
+        .blog-section {
+            background: linear-gradient(180deg, var(--cream) 0%, rgba(248, 246, 240, 0.5) 50%, var(--cream) 100%);
+        }
+
+        /* Subtle Section Borders */
+        section:not(.hero):not(.cta-section):not(.page-header) {
+            border-bottom: 1px solid rgba(44, 74, 107, 0.05);
+        }
+
+        /* Enhanced Focus States */
+        *:focus-visible {
+            outline: 3px solid var(--gold);
+            outline-offset: 3px;
+            border-radius: 4px;
+        }
+
+        button:focus-visible,
+        a:focus-visible,
+        input:focus-visible,
+        textarea:focus-visible,
+        select:focus-visible {
+            outline: 3px solid var(--gold);
+            outline-offset: 3px;
+        }
+
+        /* Selection Styling */
+        ::selection {
+            background: var(--gold);
+            color: var(--navy);
+        }
+
+        ::-moz-selection {
+            background: var(--gold);
+            color: var(--navy);
+        }
+
+        /* Custom Scrollbar (Webkit) */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--cream);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, var(--navy) 0%, var(--light-navy) 100%);
+            border-radius: 6px;
+            border: 2px solid var(--cream);
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(180deg, var(--light-navy) 0%, var(--navy) 100%);
+        }
+
+        /* Page Load Optimization */
+        body {
+            animation: pageLoad 0.4s ease-out;
+        }
+
+        @keyframes pageLoad {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Prevent Layout Shift */
+        img,
+        iframe,
+        video {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Better Link Transitions */
+        a {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Print Styles */
+        @media print {
+            nav,
+            footer,
+            .cta-section,
+            .cta-button,
+            .mobile-contact-float {
+                display: none;
+            }
+            
+            body {
+                background: white;
+                color: black;
+            }
+        }
+
+        /* High Contrast Support */
+        @media (prefers-contrast: high) {
+            .cta-button {
+                border: 2px solid currentColor;
+            }
+        }
+
+        /* Footer */
+        /* Enhanced Footer */
+        footer {
+            background: linear-gradient(135deg, #333333 0%, #222222 100%);
+            color: var(--white);
+            padding: 4rem 2rem 2rem;
+            text-align: center;
+            border-top: 3px solid var(--gold);
+            position: relative;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent 0%, var(--gold) 50%, transparent 100%);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem;
+            margin-bottom: 2.5rem;
+            flex-wrap: wrap;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            font-family: 'Arial', sans-serif;
+            position: relative;
+        }
+
+        .footer-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--gold);
+            transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+
+        .footer-links a:hover::after {
+            width: 100%;
+        }
+
+        footer p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+            margin-top: 2rem;
+        }
+
+        /* Mobile-Specific Enhancements */
+        @media (max-width: 768px) {
+            /* Larger Touch Targets */
+            .nav-links a,
+            .cta-button,
+            .footer-links a {
+                min-height: 44px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            /* Better Mobile Typography */
+            body {
+                font-size: 16px; /* Prevent zoom on input focus */
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+                line-height: 1.2;
+                letter-spacing: -0.5px;
+            }
+            
+            .hero p {
+                font-size: 1.15rem;
+                line-height: 1.6;
+            }
+
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+                line-height: 1.3;
+            }
+            
+            /* Mobile Card Spacing */
+            .service-card,
+            .blog-card,
+            .testimonial {
+                padding: 2rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            /* Mobile Form Fields */
+            .form-group input,
+            .form-group textarea,
+            .form-group select {
+                font-size: 16px; /* Prevent zoom */
+                padding: 1rem;
+            }
+            
+            /* Mobile Buttons */
+            .cta-button {
+                padding: 1rem 2rem;
+                font-size: 1rem;
+                width: 100%;
+                max-width: 320px;
+            }
+            
+            /* Mobile Navigation */
+            .nav-links {
+                gap: 1.2rem;
+                font-size: 0.85rem;
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .team-member {
+                padding: 2rem 1.5rem;
+            }
+
+            .team-member h3 {
+                font-size: 1.5rem;
+            }
+
+            .team-member .title {
+                font-size: 1.1rem;
+            }
+
+            .team-member p {
+                font-size: 1rem;
+            }
+        }
+
+        /* Tablet Optimization */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .hero h1 {
+                font-size: 3.2rem;
+            }
+            
+            .section-title {
+                font-size: 2.3rem;
+            }
+        }
+
+        /* Mobile Floating Contact Button */
+        .mobile-contact-float {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-contact-float {
+                display: block;
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                z-index: 999;
+            }
+            
+            .mobile-contact-btn {
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                background: linear-gradient(135deg, #c9a961 0%, #d4b76f 100%);
+                color: var(--navy);
+                padding: 1rem 1.5rem;
+                border-radius: 50px;
+                text-decoration: none;
+                font-weight: 700;
+                font-family: 'Arial', sans-serif;
+                font-size: 0.95rem;
+                box-shadow: 
+                    0 4px 16px rgba(201, 169, 97, 0.4),
+                    0 8px 24px rgba(0, 0, 0, 0.15);
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+            
+            .mobile-contact-btn:active {
+                transform: scale(0.95);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">SilokiInk</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1>About SilokiInk</h1>
+        <p>Where precision meets artistry in every word</p>
+    </section>
+
+    <!-- About Content -->
+    <section class="about-section">
+        <div class="container">
+            <h2>Our Story</h2>
+            <p>SilokiInk LLC was founded on a simple but powerful belief: words have the power to transform, inspire, and connect. Whether bridging languages or perfecting prose, we approach each project with the care and craftsmanship it deserves.</p>
+            
+            <p>Our name reflects our commitment to the written word—like ink flowing from a quill, we craft language that endures. We serve a diverse clientele, from authors and academics to businesses and individuals, each with unique stories to tell and messages to share.</p>
+
+            <h2 style="margin-top: 3rem;">What We Do</h2>
+            <p>We specialize in the art and science of language. Our services span from ghostwriting and editing to professional translation and interpretation. We work across industries and genres, bringing the same dedication to a business document as we do to a personal memoir.</p>
+
+            <p>Every project is an opportunity to honor the power of language—to clarify, to beautify, to preserve, and to communicate with precision and grace.</p>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="values-section">
+        <div class="container">
+            <h2 class="section-title">Our Values</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">🎯</div>
+                    <h3>Precision</h3>
+                    <p>We treat every word with meticulous attention, ensuring clarity, accuracy, and grammatical excellence in all our work.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🤝</div>
+                    <h3>Partnership</h3>
+                    <p>Your vision guides our work. We collaborate closely with clients to ensure their voice and message remain authentic and powerful.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🌟</div>
+                    <h3>Excellence</h3>
+                    <p>We hold ourselves to the highest standards of quality, delivering work that exceeds expectations and stands the test of time.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🌍</div>
+                    <h3>Cultural Sensitivity</h3>
+                    <p>Translation is more than words—it's about context and culture. We ensure your message resonates authentically across languages.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section">
+        <h2 class="section-title">Our Team</h2>
+        <div class="team-content">
+            <p>Our team brings together experienced writers, editors, and linguists who share a passion for the written word. With backgrounds spanning literature, journalism, translation studies, and professional writing, we offer expertise across diverse genres and industries.</p>
+            
+            <p>What unites us is our commitment to excellence and our belief that every client deserves personalized attention and exceptional results. We take pride in building lasting relationships with the authors, businesses, and individuals we serve.</p>
+
+            <p>Whether you're working on your first manuscript or your tenth, translating critical business documents, or preserving family history, we bring professionalism, creativity, and care to your project.</p>
+
+            <!-- Team Members Profiles -->
+            <div class="team-members">
+                <div class="team-member">
+                    <h3>Martin Jumbam</h3>
+                    <div class="title">Founder and CEO</div>
+                    <p>Martin Jumbam is the founder of SilokiInk and a storyteller whose life bridges language, culture, and human experience. Born in Nkar, Cameroon, he studied English and French at the University of Yaoundé, earned a Diploma in Translation and Interpretation from Georgetown University in Washington, D.C., pursued Spanish studies at the Universidad de Madrid, obtained a Master's in Comparative Literature from the University of Alberta (Canada), and a Maîtrise en Littérature Comparée from La Sorbonne Nouvelle (Paris III).</p>
+                    <p>After more than two decades in corporate and media leadership in Douala, Martin turned fully to writing and storytelling. He is the author of <em>From the Highlands of Nkar to the World: A Memoir</em>, <em>My Conversion Journey with Christian Cardinal Tumi</em>, <em>Beads of Memory</em>, and <em>My Night in Captivity</em> (co-author).</p>
+                    <p>Through SilokiInk, Martin helps individuals and organizations turn their ideas and experiences into authentic, resonant narratives—from personal memoirs and biographies to essays and books that inspire.</p>
+                </div>
+
+                <div class="team-member">
+                    <h3>Hermine Jumbam</h3>
+                    <div class="title">Co-founder and Copyeditor</div>
+                    <p>Hermine Jumbam is the co-founder and copyeditor of Siloki Ink, where she brings over two decades of experience in education, language, and communication to every project. A lifelong educator and advocate for clarity in writing, she ensures every story crafted at Siloki Ink reads with precision, grace, and authenticity.</p>
+                    <p>Hermine earned a Bachelor of Arts in English from the University of Yaoundé and a Master of Arts in Education from the University of Alberta, Canada.</p>
+                    <p>Before co-founding Siloki Ink, Hermine taught English and managed academic programs for students of all ages in Douala, Cameroon, where she also founded and led an English-language school. Her work has always centered on empowering others through language — whether in classrooms, libraries, or written manuscripts.</p>
+                    <p>At Siloki Ink, Hermine's meticulous editorial eye and educational insight help transform clients' ideas into clear, compelling, and meaningful narratives.</p>
+                </div>
+
+                <div class="team-member">
+                    <h3>Simolen Tala-Jumbam</h3>
+                    <div class="title">Copyeditor</div>
+                    <p>Simolen Tala-Jumbam is a copy editor at Siloki Ink and an avid blogger with a passion for language, storytelling, and clear communication. She brings a unique perspective from her work in refugee resettlement, international advocacy, and education, combining meticulous attention to detail with deep empathy for the voices she helps shape.</p>
+                    <p>Simolen holds a Master of Arts in Refugee Protection & Forced Migration Studies from the University of London, a Master of Arts in Mental Health Counseling from Franciscan University, Ohio, and a Bachelor of Science in Biology from York University, Toronto. Her extensive international experience and research background inform her editorial work, allowing her to ensure that every narrative at Siloki Ink is precise, authentic, and impactful.</p>
+                </div>
+
+                <div class="team-member">
+                    <h3>Kiwo Jumbam</h3>
+                    <div class="title">Web Developer & Online Marketer</div>
+                    <p>Kiwo Jumbam serves as the Web Developer and Online Marketer for SilokiInk, bringing the company's mission and services to life through innovative digital solutions and strategic online presence. With expertise in web development and digital marketing, Kiwo ensures that SilokiInk's brand reaches and resonates with clients across the globe.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <h2>Ready to Work Together?</h2>
+        <p>Let's discuss how SilokiInk can bring your project to life.</p>
+        <a href="contact.html" class="cta-button">Get In Touch</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="faq.html">FAQ</a>
+                <a href="blog.html">Blog</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <p>&copy; 2026 SilokiInk LLC. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div class="mobile-contact-float">
+        <a href="tel:+19095559330" class="mobile-contact-btn">
+            📞 Call Us
+        </a>
+    </div>
+</body>
+</html>
