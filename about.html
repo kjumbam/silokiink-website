@@ -612,24 +612,117 @@
         }
 
         .team-member {
+            display: flex;
+            align-items: flex-start;
+            gap: 2.5rem;
             background-color: var(--cream);
-            padding: 3rem;
+            padding: 2.5rem;
             margin-bottom: 3rem;
-            border-radius: 8px;
-            text-align: left;
+            border-radius: 12px;
             box-shadow: 
-                0 1px 3px rgba(0, 0, 0, 0.05),
-                0 4px 12px rgba(44, 74, 107, 0.08),
-                0 8px 24px rgba(44, 74, 107, 0.05);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                0 2px 8px rgba(44, 74, 107, 0.08);
+            transition: all 0.3s ease;
         }
 
         .team-member:hover {
-            box-shadow: 
-                0 8px 16px rgba(0, 0, 0, 0.08),
-                0 16px 32px rgba(44, 74, 107, 0.12),
-                0 24px 48px rgba(44, 74, 107, 0.08);
-            transform: translateY(-8px);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(44, 74, 107, 0.15);
+        }
+
+        .team-member-image {
+            flex-shrink: 0;
+        }
+
+        .team-member-image img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center;
+            border: 4px solid var(--gold);
+            box-shadow: 0 4px 12px rgba(44, 74, 107, 0.15);
+            transition: transform 0.3s ease;
+        }
+
+        .team-member:hover .team-member-image img {
+            transform: scale(1.05);
+        }
+
+        .team-member-content {
+            flex: 1;
+        }
+
+        .team-member-content h3 {
+            font-size: 2rem;
+            font-family: 'Garamond', serif;
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .team-member-content .role {
+            font-size: 1.1rem;
+            font-family: 'Arial', sans-serif;
+            color: var(--gold);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .team-member-content .bio {
+            font-size: 1rem;
+            font-family: 'Arial', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.8;
+        }
+
+        .team-member-content .bio p {
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+
+        /* Contact Info */
+        .contact-info {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(44, 74, 107, 0.1);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .contact-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, #ffffff 0%, var(--cream) 100%);
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            border: 1px solid rgba(44, 74, 107, 0.08);
+            box-shadow: 0 2px 4px rgba(44, 74, 107, 0.06);
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(44, 74, 107, 0.12);
+        }
+
+        .contact-item .icon {
+            color: var(--gold);
+            font-size: 1rem;
+        }
+
+        .contact-item a {
+            color: var(--navy);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-family: 'Arial', sans-serif;
+            font-weight: 500;
+        }
+
+        .contact-item:hover a {
+            color: var(--gold);
         }
 
         .team-member h3 {
@@ -1010,19 +1103,35 @@
             }
 
             .team-member {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 1.5rem;
                 padding: 2rem 1.5rem;
             }
 
-            .team-member h3 {
-                font-size: 1.5rem;
+            .team-member-image {
+                margin-bottom: 1rem;
             }
 
-            .team-member .title {
-                font-size: 1.1rem;
+            .team-member-content h3 {
+                font-size: 1.75rem;
             }
 
-            .team-member p {
+            .team-member-content .role {
                 font-size: 1rem;
+            }
+
+            .team-member-content .bio {
+                font-size: 1rem;
+            }
+
+            .team-member-content .bio p {
+                text-align: center;
+            }
+
+            .contact-info {
+                justify-content: center;
             }
         }
 
@@ -1155,33 +1264,93 @@
             <!-- Team Members Profiles -->
             <div class="team-members">
                 <div class="team-member">
-                    <h3>Martin Jumbam</h3>
-                    <div class="title">Founder and CEO</div>
-                    <p>Martin Jumbam is the founder of SilokiInk and a storyteller whose life bridges language, culture, and human experience. Born in Nkar, Cameroon, he studied English and French at the University of Yaoundé, earned a Diploma in Translation and Interpretation from Georgetown University in Washington, D.C., pursued Spanish studies at the Universidad de Madrid, obtained a Master's in Comparative Literature from the University of Alberta (Canada), and a Maîtrise en Littérature Comparée from La Sorbonne Nouvelle (Paris III).</p>
-                    <p>After more than two decades in corporate and media leadership in Douala, Martin turned fully to writing and storytelling. He is the author of <em>From the Highlands of Nkar to the World: A Memoir</em>, <em>My Conversion Journey with Christian Cardinal Tumi</em>, <em>Beads of Memory</em>, and <em>My Night in Captivity</em> (co-author).</p>
-                    <p>Through SilokiInk, Martin helps individuals and organizations turn their ideas and experiences into authentic, resonant narratives—from personal memoirs and biographies to essays and books that inspire.</p>
+                    <div class="team-member-image">
+                        <img src="images/martin-jumbam.jpg" alt="Martin Jumbam, Founder and CEO of SilokiInk">
+                    </div>
+                    <div class="team-member-content">
+                        <h3>Martin Jumbam</h3>
+                        <div class="role">Founder and CEO</div>
+                        <div class="bio">
+                            <p>Martin Jumbam is the founder of SilokiInk and a storyteller whose life bridges language, culture, and human experience. Born in Nkar, Cameroon, he studied English and French at the University of Yaoundé, earned a Diploma in Translation and Interpretation from Georgetown University in Washington, D.C., pursued Spanish studies at the Universidad de Madrid, obtained a Master's in Comparative Literature from the University of Alberta (Canada), and a Maîtrise en Littérature Comparée from La Sorbonne Nouvelle (Paris III).</p>
+                            <p>After more than two decades in corporate and media leadership in Douala, Martin turned fully to writing and storytelling. He is the author of <em>From the Highlands of Nkar to the World: A Memoir</em>, <em>My Conversion Journey with Christian Cardinal Tumi</em>, <em>Beads of Memory</em>, and <em>My Night in Captivity</em> (co-author).</p>
+                            <p>Through SilokiInk, Martin helps individuals and organizations turn their ideas and experiences into authentic, resonant narratives—from personal memoirs and biographies to essays and books that inspire.</p>
+                        </div>
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <span class="icon">✉</span>
+                                <a href="mailto:mart.jumbam@gmail.com">mart.jumbam@gmail.com</a>
+                            </div>
+                            <div class="contact-item">
+                                <span class="icon">📞</span>
+                                <a href="tel:+19093519330">+1 (909) 351-9330</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="team-member">
-                    <h3>Hermine Jumbam</h3>
-                    <div class="title">Co-founder and Copyeditor</div>
-                    <p>Hermine Jumbam is the co-founder and copyeditor of Siloki Ink, where she brings over two decades of experience in education, language, and communication to every project. A lifelong educator and advocate for clarity in writing, she ensures every story crafted at Siloki Ink reads with precision, grace, and authenticity.</p>
-                    <p>Hermine earned a Bachelor of Arts in English from the University of Yaoundé and a Master of Arts in Education from the University of Alberta, Canada.</p>
-                    <p>Before co-founding Siloki Ink, Hermine taught English and managed academic programs for students of all ages in Douala, Cameroon, where she also founded and led an English-language school. Her work has always centered on empowering others through language — whether in classrooms, libraries, or written manuscripts.</p>
-                    <p>At Siloki Ink, Hermine's meticulous editorial eye and educational insight help transform clients' ideas into clear, compelling, and meaningful narratives.</p>
+                    <div class="team-member-image">
+                        <img src="images/hermine-jumbam.jpg" alt="Hermine Jumbam, Co-founder and Copyeditor of SilokiInk">
+                    </div>
+                    <div class="team-member-content">
+                        <h3>Hermine Jumbam</h3>
+                        <div class="role">Co-founder and Copyeditor</div>
+                        <div class="bio">
+                            <p>Hermine Jumbam is the co-founder and copyeditor of Siloki Ink, where she brings over two decades of experience in education, language, and communication to every project. A lifelong educator and advocate for clarity in writing, she ensures every story crafted at Siloki Ink reads with precision, grace, and authenticity.</p>
+                            <p>Hermine earned a Bachelor of Arts in English from the University of Yaoundé and a Master of Arts in Education from the University of Alberta, Canada.</p>
+                            <p>Before co-founding Siloki Ink, Hermine taught English and managed academic programs for students of all ages in Douala, Cameroon, where she also founded and led an English-language school. Her work has always centered on empowering others through language — whether in classrooms, libraries, or written manuscripts.</p>
+                            <p>At Siloki Ink, Hermine's meticulous editorial eye and educational insight help transform clients' ideas into clear, compelling, and meaningful narratives.</p>
+                        </div>
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <span class="icon">✉</span>
+                                <a href="mailto:hjumbam@gmail.com">hjumbam@gmail.com</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="team-member">
-                    <h3>Simolen Tala-Jumbam</h3>
-                    <div class="title">Copyeditor</div>
-                    <p>Simolen Tala-Jumbam is a copy editor at Siloki Ink and an avid blogger with a passion for language, storytelling, and clear communication. She brings a unique perspective from her work in refugee resettlement, international advocacy, and education, combining meticulous attention to detail with deep empathy for the voices she helps shape.</p>
-                    <p>Simolen holds a Master of Arts in Refugee Protection & Forced Migration Studies from the University of London, a Master of Arts in Mental Health Counseling from Franciscan University, Ohio, and a Bachelor of Science in Biology from York University, Toronto. Her extensive international experience and research background inform her editorial work, allowing her to ensure that every narrative at Siloki Ink is precise, authentic, and impactful.</p>
+                    <div class="team-member-image">
+                        <img src="images/simolen-jumbam.jpg" alt="Simolen Tala-Jumbam, Copyeditor at SilokiInk">
+                    </div>
+                    <div class="team-member-content">
+                        <h3>Simolen Tala-Jumbam</h3>
+                        <div class="role">Copyeditor</div>
+                        <div class="bio">
+                            <p>Simolen Tala-Jumbam is a copy editor at Siloki Ink and an avid blogger with a passion for language, storytelling, and clear communication. She brings a unique perspective from her work in refugee resettlement, international advocacy, and education, combining meticulous attention to detail with deep empathy for the voices she helps shape.</p>
+                            <p>Simolen holds a Master of Arts in Refugee Protection & Forced Migration Studies from the University of London, a Master of Arts in Mental Health Counseling from Franciscan University, Ohio, and a Bachelor of Science in Biology from York University, Toronto. Her extensive international experience and research background inform her editorial work, allowing her to ensure that every narrative at Siloki Ink is precise, authentic, and impactful.</p>
+                        </div>
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <span class="icon">✉</span>
+                                <a href="mailto:stjumbam@gmail.com">stjumbam@gmail.com</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="team-member">
-                    <h3>Kiwo Jumbam</h3>
-                    <div class="title">Web Developer & Online Marketer</div>
-                    <p>Kiwo Jumbam serves as the Web Developer and Online Marketer for SilokiInk, bringing the company's mission and services to life through innovative digital solutions and strategic online presence. With expertise in web development and digital marketing, Kiwo ensures that SilokiInk's brand reaches and resonates with clients across the globe.</p>
+                    <div class="team-member-image">
+                        <img src="images/kiwo-jumbam.jpg" alt="Kiwo Jumbam, Web Developer and Online Marketer at SilokiInk">
+                    </div>
+                    <div class="team-member-content">
+                        <h3>Kiwo Jumbam</h3>
+                        <div class="role">Web Developer & Online Marketer</div>
+                        <div class="bio">
+                            <p>Kiwo Jumbam serves as the Web Developer and Online Marketer for SilokiInk, bringing the company's mission and services to life through innovative digital solutions and strategic online presence. With expertise in web development and digital marketing, Kiwo ensures that SilokiInk's brand reaches and resonates with clients across the globe.</p>
+                        </div>
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <span class="icon">✉</span>
+                                <a href="mailto:jumbamkiwo@gmail.com">jumbamkiwo@gmail.com</a>
+                            </div>
+                            <div class="contact-item">
+                                <span class="icon">📞</span>
+                                <a href="tel:+16087387493">+1 (608) 738-7493</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
