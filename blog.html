@@ -1087,6 +1087,130 @@
                 transform: scale(0.95);
             }
         }
+
+        /* Cookie Consent Banner */
+        .cookie-consent-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, #2c4a6b 0%, #1f3247 100%);
+            color: var(--white);
+            padding: 1.5rem 2rem;
+            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
+            z-index: 10000;
+            transform: translateY(100%);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            font-family: 'Arial', sans-serif;
+        }
+
+        .cookie-consent-banner.show {
+            transform: translateY(0);
+        }
+
+        .cookie-consent-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .cookie-consent-text {
+            flex: 1;
+            min-width: 300px;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        .cookie-consent-text a {
+            color: var(--gold);
+            text-decoration: underline;
+            transition: color 0.3s ease;
+        }
+
+        .cookie-consent-text a:hover {
+            color: var(--gold-light);
+        }
+
+        .cookie-consent-actions {
+            display: flex;
+            gap: 1rem;
+            flex-shrink: 0;
+        }
+
+        .cookie-consent-btn {
+            padding: 0.75rem 2rem;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            font-family: 'Arial', sans-serif;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: none;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        .cookie-consent-btn.accept {
+            background: linear-gradient(135deg, #c9a961 0%, #d4b76f 100%);
+            color: var(--navy);
+            box-shadow: 0 2px 8px rgba(201, 169, 97, 0.3);
+        }
+
+        .cookie-consent-btn.accept:hover {
+            background: linear-gradient(135deg, #d4b76f 0%, #c9a961 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(201, 169, 97, 0.4);
+        }
+
+        .cookie-consent-btn.decline {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .cookie-consent-btn.decline:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        @media (max-width: 768px) {
+            .cookie-consent-banner {
+                padding: 1.25rem 1.5rem;
+            }
+
+            .cookie-consent-content {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 1.25rem;
+            }
+
+            .cookie-consent-text {
+                min-width: auto;
+                font-size: 0.9rem;
+                text-align: center;
+            }
+
+            .cookie-consent-actions {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+
+            .cookie-consent-btn {
+                width: 100%;
+                padding: 0.875rem 1.5rem;
+                text-align: center;
+            }
+
+            .mobile-contact-float {
+                bottom: auto;
+                top: 80px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1262,5 +1386,59 @@
             📞 Call Us
         </a>
     </div>
+
+    <!-- Cookie Consent Banner -->
+    <div class="cookie-consent-banner" id="cookieConsent">
+        <div class="cookie-consent-content">
+            <div class="cookie-consent-text">
+                We use cookies to improve your experience and analyze site traffic. By continuing to use this site, you consent to our use of cookies. 
+                <a href="cookie-policy.html">Learn more</a>
+            </div>
+            <div class="cookie-consent-actions">
+                <button class="cookie-consent-btn accept" onclick="acceptCookies()">Accept</button>
+                <button class="cookie-consent-btn decline" onclick="declineCookies()">Decline</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function checkCookieConsent() {
+            const consent = localStorage.getItem('cookieConsent');
+            if (!consent) {
+                setTimeout(function() {
+                    document.getElementById('cookieConsent').classList.add('show');
+                }, 1000);
+            }
+        }
+
+        function acceptCookies() {
+            localStorage.setItem('cookieConsent', 'accepted');
+            localStorage.setItem('cookieConsentDate', new Date().toISOString());
+            hideCookieBanner();
+            console.log('Cookies accepted');
+        }
+
+        function declineCookies() {
+            localStorage.setItem('cookieConsent', 'declined');
+            localStorage.setItem('cookieConsentDate', new Date().toISOString());
+            hideCookieBanner();
+            console.log('Cookies declined');
+            if (typeof ga !== 'undefined') {
+                window['ga-disable-UA-XXXXXX-X'] = true;
+            }
+        }
+
+        function hideCookieBanner() {
+            const banner = document.getElementById('cookieConsent');
+            banner.classList.remove('show');
+            setTimeout(function() {
+                banner.style.display = 'none';
+            }, 400);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            checkCookieConsent();
+        });
+    </script>
 </body>
 </html>

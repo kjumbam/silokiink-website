@@ -1,0 +1,1323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessibility Statement - SilokiInk LLC</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+
+        a[href^="#"] {
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --navy: #2c4a6b;
+            --light-navy: #3d5a7a;
+            --gold: #c9a961;
+            --cream: #f8f6f0;
+            --white: #ffffff;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --dark-navy: #1f3247;
+            --gold-light: #d4b76f;
+            --gold-dark: #b38a4f;
+            
+            --gradient-navy: linear-gradient(135deg, #2c4a6b 0%, #1f3247 100%);
+            --gradient-navy-reverse: linear-gradient(135deg, #3d5a7a 0%, #2c4a6b 100%);
+            --gradient-gold: linear-gradient(135deg, #c9a961 0%, #d4b76f 100%);
+            --gradient-cream: linear-gradient(180deg, #ffffff 0%, #f8f6f0 100%);
+            
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 1.5rem;
+            --space-lg: 2.5rem;
+            --space-xl: 4rem;
+            --space-2xl: 6rem;
+            --space-3xl: 8rem;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.75;
+            color: var(--text-dark);
+            background-color: var(--cream);
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        h1, .hero h1, .page-header h1 {
+            font-family: 'Garamond', serif;
+            font-weight: 400;
+            line-height: 1.2;
+            letter-spacing: -0.8px;
+        }
+
+        h2, .section-title {
+            font-family: 'Garamond', serif;
+            font-weight: 400;
+            line-height: 1.3;
+            letter-spacing: -0.4px;
+            margin-bottom: 1.5rem;
+        }
+
+        h3 {
+            font-family: 'Arial', sans-serif;
+            font-weight: 600;
+            line-height: 1.4;
+            letter-spacing: 0.3px;
+        }
+
+        p {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.85;
+            margin-bottom: 1.5rem;
+        }
+
+        .accessibility-content p,
+        .accessibility-content ul {
+            max-width: 70ch;
+            line-height: 1.9;
+        }
+
+        .nav-links a {
+            position: relative;
+            transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .page-header {
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        .page-header h1 {
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        .page-header p {
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        section:not(.hero):not(.cta-section):not(.page-header) {
+            padding: var(--space-2xl) 2rem;
+        }
+
+        .page-header {
+            padding: var(--space-2xl) 2rem var(--space-xl);
+        }
+
+        .section-title {
+            margin-bottom: var(--space-xl);
+        }
+
+        h2 {
+            margin-top: var(--space-xl);
+            margin-bottom: var(--space-md);
+        }
+
+        h3 {
+            margin-top: var(--space-lg);
+            margin-bottom: var(--space-sm);
+        }
+
+        p {
+            margin-bottom: var(--space-md);
+        }
+
+        @media (max-width: 768px) {
+            section:not(.hero):not(.cta-section):not(.page-header) {
+                padding: var(--space-xl) 1.5rem;
+            }
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(201, 169, 97, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .page-header {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header h1 {
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .page-header p {
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+        }
+
+        .section-title {
+            text-shadow: 0 1px 2px rgba(44, 74, 107, 0.08);
+        }
+
+        .logo {
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        nav {
+            background: linear-gradient(135deg, #2c4a6b 0%, #1f3247 100%);
+            padding: 1.2rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 
+                0 2px 8px rgba(0, 0, 0, 0.1),
+                0 4px 16px rgba(44, 74, 107, 0.15);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(201, 169, 97, 0.15);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            color: var(--white);
+            font-size: 2rem;
+            font-weight: 600;
+            text-decoration: none;
+            font-family: 'Garamond', serif;
+            letter-spacing: 0.5px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .logo:hover {
+            color: var(--gold);
+            transform: scale(1.05);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            font-family: 'Arial', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a:hover {
+            color: var(--white);
+        }
+
+        .page-header {
+            background: linear-gradient(135deg, #2c4a6b 0%, #1f3247 70%, #3d5a7a 100%);
+            color: var(--white);
+            padding: 5rem 2rem 3rem;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-family: 'Garamond', serif;
+        }
+
+        .page-header p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+            font-family: 'Arial', sans-serif;
+            opacity: 0.95;
+        }
+
+        .accessibility-content {
+            padding: 6rem 2rem;
+            background-color: var(--white);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .accessibility-content h2 {
+            color: var(--navy);
+            font-size: 2rem;
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+            font-family: 'Garamond', serif;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .accessibility-content h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 100%);
+            border-radius: 2px;
+        }
+
+        .accessibility-content h2:first-of-type {
+            margin-top: 0;
+        }
+
+        .accessibility-content h3 {
+            color: var(--navy);
+            font-size: 1.3rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .accessibility-content p {
+            font-size: 1.05rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+            font-family: 'Arial', sans-serif;
+            line-height: 1.8;
+        }
+
+        .accessibility-content ul {
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .accessibility-content li {
+            font-family: 'Arial', sans-serif;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--text-dark);
+            margin-bottom: 0.75rem;
+        }
+
+        .accessibility-content a {
+            color: var(--navy);
+            text-decoration: underline;
+            transition: color 0.3s ease;
+        }
+
+        .accessibility-content a:hover {
+            color: var(--gold);
+        }
+
+        .last-updated {
+            background: var(--cream);
+            padding: 1.5rem;
+            border-left: 4px solid var(--gold);
+            margin-bottom: 2rem;
+            border-radius: 4px;
+        }
+
+        .last-updated p {
+            margin-bottom: 0;
+            font-weight: 600;
+            color: var(--navy);
+        }
+
+        .contact-section {
+            background: var(--cream);
+            padding: 2rem;
+            border-radius: 8px;
+            margin-top: 3rem;
+            border: 1px solid rgba(44, 74, 107, 0.1);
+        }
+
+        .contact-section h3 {
+            color: var(--navy);
+            margin-top: 0;
+        }
+
+        .feature-box {
+            background: #f0f8ff;
+            border-left: 4px solid var(--navy);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 4px;
+        }
+
+        .feature-box h3 {
+            color: var(--navy);
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+
+        .feature-box ul {
+            margin-left: 1.5rem;
+        }
+
+        .feature-box li {
+            margin-bottom: 0.5rem;
+        }
+
+        .commitment-box {
+            background: linear-gradient(135deg, rgba(201, 169, 97, 0.1) 0%, rgba(201, 169, 97, 0.05) 100%);
+            border: 2px solid var(--gold);
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .commitment-box p {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 0;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #1f3247 0%, #2c4a6b 50%, #3d5a7a 100%);
+            color: var(--white);
+            padding: 5rem 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-family: 'Garamond', serif;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #c9a961 0%, #d4b76f 100%);
+            color: var(--navy);
+            padding: 1.2rem 3rem;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1.05rem;
+            letter-spacing: 0.5px;
+            font-family: 'Arial', sans-serif;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .cta-button:hover::before {
+            width: 400px;
+            height: 400px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+        }
+
+        .cta-button:active {
+            transform: translateY(-1px);
+        }
+
+        .cta-section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                repeating-linear-gradient(
+                    0deg,
+                    rgba(255, 255, 255, 0.03) 0px,
+                    transparent 1px,
+                    transparent 2px,
+                    rgba(255, 255, 255, 0.03) 3px
+                );
+            pointer-events: none;
+            opacity: 0.4;
+            z-index: 1;
+        }
+
+        .cta-section > * {
+            position: relative;
+            z-index: 2;
+        }
+
+        .accessibility-content {
+            background: linear-gradient(180deg, var(--white) 0%, var(--cream) 50%, var(--white) 100%);
+        }
+
+        section:not(.hero):not(.cta-section):not(.page-header) {
+            border-bottom: 1px solid rgba(44, 74, 107, 0.05);
+        }
+
+        *:focus-visible {
+            outline: 3px solid var(--gold);
+            outline-offset: 3px;
+            border-radius: 4px;
+        }
+
+        button:focus-visible,
+        a:focus-visible,
+        input:focus-visible,
+        textarea:focus-visible,
+        select:focus-visible {
+            outline: 3px solid var(--gold);
+            outline-offset: 3px;
+        }
+
+        ::selection {
+            background: var(--gold);
+            color: var(--navy);
+        }
+
+        ::-moz-selection {
+            background: var(--gold);
+            color: var(--navy);
+        }
+
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--cream);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, var(--navy) 0%, var(--light-navy) 100%);
+            border-radius: 6px;
+            border: 2px solid var(--cream);
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(180deg, var(--light-navy) 0%, var(--navy) 100%);
+        }
+
+        body {
+            animation: pageLoad 0.4s ease-out;
+        }
+
+        @keyframes pageLoad {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        img,
+        iframe,
+        video {
+            max-width: 100%;
+            height: auto;
+        }
+
+        a {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        @media print {
+            nav,
+            footer,
+            .cta-section,
+            .cta-button,
+            .mobile-contact-float {
+                display: none;
+            }
+            
+            body {
+                background: white;
+                color: black;
+            }
+        }
+
+        @media (prefers-contrast: high) {
+            .cta-button {
+                border: 2px solid currentColor;
+            }
+        }
+
+        footer {
+            background: linear-gradient(135deg, #333333 0%, #222222 100%);
+            color: var(--white);
+            padding: 4rem 2rem 2rem;
+            text-align: center;
+            border-top: 3px solid var(--gold);
+            position: relative;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent 0%, var(--gold) 50%, transparent 100%);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem;
+            margin-bottom: 2.5rem;
+            flex-wrap: wrap;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            font-family: 'Arial', sans-serif;
+            position: relative;
+        }
+
+        .footer-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--gold);
+            transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+
+        .footer-links a:hover::after {
+            width: 100%;
+        }
+
+        footer p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links a,
+            .cta-button,
+            .footer-links a {
+                min-height: 44px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            body {
+                font-size: 16px;
+            }
+
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+
+            .page-header p {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+                line-height: 1.3;
+            }
+
+            .accessibility-content h2 {
+                font-size: 1.7rem;
+            }
+
+            .accessibility-content h3 {
+                font-size: 1.2rem;
+            }
+            
+            .cta-button {
+                padding: 1rem 2rem;
+                font-size: 1rem;
+                width: 100%;
+                max-width: 320px;
+            }
+            
+            .nav-links {
+                gap: 1.2rem;
+                font-size: 0.85rem;
+            }
+        }
+
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .page-header h1 {
+                font-size: 2.7rem;
+            }
+            
+            .section-title {
+                font-size: 2.3rem;
+            }
+        }
+
+        .mobile-contact-float {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-contact-float {
+                display: block;
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                z-index: 999;
+            }
+            
+            .mobile-contact-btn {
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                background: linear-gradient(135deg, #c9a961 0%, #d4b76f 100%);
+                color: var(--navy);
+                padding: 1rem 1.5rem;
+                border-radius: 50px;
+                text-decoration: none;
+                font-weight: 700;
+                font-family: 'Arial', sans-serif;
+                font-size: 0.95rem;
+                box-shadow: 
+                    0 4px 16px rgba(201, 169, 97, 0.4),
+                    0 8px 24px rgba(0, 0, 0, 0.15);
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+            
+            .mobile-contact-btn:active {
+                transform: scale(0.95);
+            }
+        }
+
+        /* Cookie Consent Banner */
+        .cookie-consent-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, #2c4a6b 0%, #1f3247 100%);
+            color: var(--white);
+            padding: 1.5rem 2rem;
+            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
+            z-index: 10000;
+            transform: translateY(100%);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            font-family: 'Arial', sans-serif;
+        }
+
+        .cookie-consent-banner.show {
+            transform: translateY(0);
+        }
+
+        .cookie-consent-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .cookie-consent-text {
+            flex: 1;
+            min-width: 300px;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        .cookie-consent-text a {
+            color: var(--gold);
+            text-decoration: underline;
+            transition: color 0.3s ease;
+        }
+
+        .cookie-consent-text a:hover {
+            color: var(--gold-light);
+        }
+
+        .cookie-consent-actions {
+            display: flex;
+            gap: 1rem;
+            flex-shrink: 0;
+        }
+
+        .cookie-consent-btn {
+            padding: 0.75rem 2rem;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            font-family: 'Arial', sans-serif;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: none;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        .cookie-consent-btn.accept {
+            background: linear-gradient(135deg, #c9a961 0%, #d4b76f 100%);
+            color: var(--navy);
+            box-shadow: 0 2px 8px rgba(201, 169, 97, 0.3);
+        }
+
+        .cookie-consent-btn.accept:hover {
+            background: linear-gradient(135deg, #d4b76f 0%, #c9a961 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(201, 169, 97, 0.4);
+        }
+
+        .cookie-consent-btn.decline {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .cookie-consent-btn.decline:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        @media (max-width: 768px) {
+            .cookie-consent-banner {
+                padding: 1.25rem 1.5rem;
+            }
+
+            .cookie-consent-content {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 1.25rem;
+            }
+
+            .cookie-consent-text {
+                min-width: auto;
+                font-size: 0.9rem;
+                text-align: center;
+            }
+
+            .cookie-consent-actions {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+
+            .cookie-consent-btn {
+                width: 100%;
+                padding: 0.875rem 1.5rem;
+                text-align: center;
+            }
+
+            .mobile-contact-float {
+                bottom: auto;
+                top: 80px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">SilokiInk</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1>Accessibility Statement</h1>
+        <p>Our commitment to making our website accessible to everyone</p>
+    </section>
+
+    <!-- Accessibility Content -->
+    <section class="accessibility-content">
+        <div class="container">
+            <div class="last-updated">
+                <p>Last Updated: February 2026</p>
+            </div>
+
+            <div class="commitment-box">
+                <p>SilokiInk LLC is committed to ensuring digital accessibility for people of all abilities. We are continually improving the user experience for everyone and applying the relevant accessibility standards.</p>
+            </div>
+
+            <h2>1. Our Commitment to Accessibility</h2>
+            <p>At SilokiInk LLC, we believe that everyone deserves equal access to information and services online, regardless of their abilities or the assistive technologies they use. As a company dedicated to the written word and clear communication, we recognize the fundamental importance of making our website accessible to all visitors.</p>
+            <p>We are committed to:</p>
+            <ul>
+                <li>Ensuring our website is accessible to people with disabilities, including those who use screen readers, keyboard navigation, or other assistive technologies</li>
+                <li>Continuously improving the accessibility of our website based on user feedback and evolving best practices</li>
+                <li>Providing accessible content and services to all our clients and website visitors</li>
+                <li>Training our team on accessibility best practices and inclusive design principles</li>
+                <li>Regularly testing and evaluating our website for accessibility compliance</li>
+            </ul>
+
+            <h2>2. Web Content Accessibility Guidelines (WCAG)</h2>
+            <p>We strive to conform to the <a href="https://www.w3.org/WAI/WCAG21/quickref/" target="_blank" rel="noopener noreferrer">Web Content Accessibility Guidelines (WCAG) 2.1</a> at Level AA. These guidelines are internationally recognized standards developed by the World Wide Web Consortium (W3C) to make web content more accessible to people with disabilities.</p>
+            
+            <p>WCAG 2.1 Level AA addresses four main principles that make content accessible:</p>
+            <ul>
+                <li><strong>Perceivable:</strong> Information and user interface components must be presentable to users in ways they can perceive</li>
+                <li><strong>Operable:</strong> User interface components and navigation must be operable by all users</li>
+                <li><strong>Understandable:</strong> Information and the operation of the user interface must be understandable</li>
+                <li><strong>Robust:</strong> Content must be robust enough to be interpreted reliably by a wide variety of user agents, including assistive technologies</li>
+            </ul>
+
+            <h2>3. Accessibility Features We've Implemented</h2>
+            <p>We have implemented numerous accessibility features throughout our website to ensure a positive experience for all users:</p>
+
+            <div class="feature-box">
+                <h3>Semantic HTML Structure</h3>
+                <ul>
+                    <li>Proper use of HTML5 semantic elements (header, nav, main, section, article, footer)</li>
+                    <li>Logical heading hierarchy (H1, H2, H3) for easy navigation with screen readers</li>
+                    <li>Descriptive page titles on every page</li>
+                    <li>Meaningful link text that describes link destinations</li>
+                    <li>Properly structured lists for related content</li>
+                </ul>
+            </div>
+
+            <div class="feature-box">
+                <h3>Keyboard Navigation Support</h3>
+                <ul>
+                    <li>All interactive elements (links, buttons, forms) are fully accessible via keyboard</li>
+                    <li>Logical tab order throughout all pages</li>
+                    <li>Visible focus indicators (gold outline) on all interactive elements</li>
+                    <li>Skip-to-content functionality for keyboard users (coming soon)</li>
+                    <li>No keyboard traps that prevent users from navigating away</li>
+                </ul>
+            </div>
+
+            <div class="feature-box">
+                <h3>Alternative Text for Images</h3>
+                <ul>
+                    <li>Descriptive alt text provided for all informative images</li>
+                    <li>Decorative images marked appropriately to be ignored by screen readers</li>
+                    <li>Complex images supplemented with detailed descriptions where necessary</li>
+                    <li>Team member photos include descriptive alt text identifying individuals</li>
+                </ul>
+            </div>
+
+            <div class="feature-box">
+                <h3>Color and Contrast</h3>
+                <ul>
+                    <li>Sufficient color contrast ratios (minimum 4.5:1 for normal text, 3:1 for large text) meeting WCAG AA standards</li>
+                    <li>Navy (#2c4a6b) and gold (#c9a961) color scheme tested for accessibility</li>
+                    <li>Information conveyed through color is also communicated through text or patterns</li>
+                    <li>Text remains readable against background colors in all sections</li>
+                    <li>Support for high contrast mode in browsers</li>
+                </ul>
+            </div>
+
+            <div class="feature-box">
+                <h3>Typography and Readability</h3>
+                <ul>
+                    <li>Readable, professional fonts (Garamond, Georgia, Arial) that render clearly across devices</li>
+                    <li>Base font size of 16px (1rem) for comfortable reading</li>
+                    <li>Generous line height (1.75-1.9) for improved readability</li>
+                    <li>Optimal line length (70 characters maximum) for easy reading</li>
+                    <li>Text can be resized up to 200% without loss of content or functionality</li>
+                    <li>Sufficient spacing between paragraphs and sections</li>
+                </ul>
+            </div>
+
+            <div class="feature-box">
+                <h3>Responsive Design</h3>
+                <ul>
+                    <li>Fully responsive layout that works on all devices (mobile, tablet, desktop)</li>
+                    <li>Content reflows appropriately at different screen sizes</li>
+                    <li>Touch targets on mobile devices are at least 44x44 pixels for easy tapping</li>
+                    <li>Horizontal scrolling is avoided on all screen sizes</li>
+                    <li>Zoom functionality works correctly on all devices</li>
+                </ul>
+            </div>
+
+            <div class="feature-box">
+                <h3>Screen Reader Compatibility</h3>
+                <ul>
+                    <li>Website tested with popular screen readers (NVDA, JAWS, VoiceOver)</li>
+                    <li>ARIA labels and landmarks used where appropriate to enhance screen reader navigation</li>
+                    <li>Form fields include clear, associated labels</li>
+                    <li>Error messages are announced to screen reader users</li>
+                    <li>Dynamic content updates are communicated to assistive technologies</li>
+                </ul>
+            </div>
+
+            <div class="feature-box">
+                <h3>Forms and User Input</h3>
+                <ul>
+                    <li>Clear, descriptive labels for all form fields</li>
+                    <li>Required fields clearly indicated</li>
+                    <li>Error messages are specific, helpful, and associated with the relevant fields</li>
+                    <li>Forms can be completed using only a keyboard</li>
+                    <li>Sufficient time provided to complete forms (no timeouts)</li>
+                </ul>
+            </div>
+
+            <div class="feature-box">
+                <h3>Multimedia and Content</h3>
+                <ul>
+                    <li>Auto-playing audio or video is avoided</li>
+                    <li>Users have control over multimedia playback</li>
+                    <li>Animations respect the "prefers-reduced-motion" setting for users sensitive to motion</li>
+                    <li>Content is written in clear, simple language</li>
+                    <li>Page language is properly declared (lang="en")</li>
+                </ul>
+            </div>
+
+            <h2>4. Ongoing Accessibility Improvements</h2>
+            <p>Web accessibility is an ongoing journey, not a destination. We are continuously working to improve the accessibility of our website. Current and planned improvements include:</p>
+            
+            <h3>In Progress</h3>
+            <ul>
+                <li>Implementing skip navigation links for faster access to main content</li>
+                <li>Adding ARIA live regions for dynamic content updates</li>
+                <li>Conducting comprehensive accessibility audits with automated and manual testing tools</li>
+                <li>Testing with a diverse range of assistive technologies and user scenarios</li>
+                <li>Enhancing keyboard shortcuts for common actions</li>
+            </ul>
+
+            <h3>Planned Enhancements</h3>
+            <ul>
+                <li>Adding text transcripts for any video content we create</li>
+                <li>Implementing a site-wide accessibility settings panel (font size, contrast options)</li>
+                <li>Conducting user testing with people who use assistive technologies</li>
+                <li>Creating an accessibility roadmap with regular review and updates</li>
+                <li>Providing accessibility training for all team members who create or manage web content</li>
+            </ul>
+
+            <h2>5. Known Limitations</h2>
+            <p>We strive for full accessibility, but we acknowledge that some limitations currently exist:</p>
+            
+            <h3>Third-Party Content</h3>
+            <ul>
+                <li><strong>Google Analytics:</strong> We use Google Analytics to understand website usage. While Google provides accessibility features, we have limited control over their implementation</li>
+                <li><strong>External Links:</strong> We link to external resources that may not meet the same accessibility standards as our site. We cannot control the accessibility of third-party websites</li>
+            </ul>
+
+            <h3>Current Challenges</h3>
+            <ul>
+                <li>Some decorative visual elements may not provide value to screen reader users (though they don't interfere with content access)</li>
+                <li>Complex tables (if added in the future) may require additional navigation support</li>
+            </ul>
+
+            <p>We are actively working to address these limitations and welcome your feedback on how we can improve.</p>
+
+            <h2>6. Third-Party Content Disclaimer</h2>
+            <p>Our website may contain links to external websites or embed content from third-party services. While we strive to link to accessible resources, we cannot guarantee the accessibility of third-party websites or content.</p>
+            <p>Third-party services we use include:</p>
+            <ul>
+                <li><strong>Google Analytics:</strong> For website analytics (see our <a href="cookie-policy.html">Cookie Policy</a>)</li>
+                <li><strong>External Resources:</strong> Links to articles, guides, and related websites</li>
+            </ul>
+            <p>If you encounter accessibility barriers on a linked website, we recommend contacting that website's owner directly. However, please let us know so we can consider more accessible alternatives.</p>
+
+            <h2>7. Testing and Evaluation</h2>
+            <p>We regularly test our website for accessibility using multiple methods:</p>
+            
+            <h3>Automated Testing</h3>
+            <ul>
+                <li>Automated accessibility testing tools to identify common issues</li>
+                <li>Browser extensions for contrast checking and WCAG compliance</li>
+                <li>Lighthouse accessibility audits in Chrome DevTools</li>
+            </ul>
+
+            <h3>Manual Testing</h3>
+            <ul>
+                <li>Keyboard-only navigation testing on all pages</li>
+                <li>Screen reader testing (NVDA, JAWS, VoiceOver)</li>
+                <li>Testing with browser zoom at various levels (100%-200%)</li>
+                <li>Mobile device testing with VoiceOver (iOS) and TalkBack (Android)</li>
+                <li>Manual code review for semantic HTML and ARIA usage</li>
+            </ul>
+
+            <h3>User Feedback</h3>
+            <p>The most valuable testing comes from real users. We actively seek feedback from people who use assistive technologies to identify issues we might have missed.</p>
+
+            <h2>8. Assistive Technologies We Support</h2>
+            <p>Our website has been tested with and aims to support the following assistive technologies:</p>
+            
+            <h3>Screen Readers</h3>
+            <ul>
+                <li><strong>NVDA</strong> (NonVisual Desktop Access) - Free screen reader for Windows</li>
+                <li><strong>JAWS</strong> (Job Access With Speech) - Commercial screen reader for Windows</li>
+                <li><strong>VoiceOver</strong> - Built-in screen reader for macOS and iOS</li>
+                <li><strong>TalkBack</strong> - Built-in screen reader for Android</li>
+                <li><strong>Narrator</strong> - Built-in screen reader for Windows</li>
+            </ul>
+
+            <h3>Browsers</h3>
+            <p>Our website works with current versions of major browsers:</p>
+            <ul>
+                <li>Google Chrome</li>
+                <li>Mozilla Firefox</li>
+                <li>Safari</li>
+                <li>Microsoft Edge</li>
+            </ul>
+
+            <h3>Other Assistive Technologies</h3>
+            <ul>
+                <li>Screen magnification software</li>
+                <li>Voice recognition software (Dragon NaturallySpeaking, etc.)</li>
+                <li>Alternative input devices</li>
+            </ul>
+
+            <h2>9. Feedback and Contact Information</h2>
+            
+            <div class="contact-section">
+                <h3>We Want to Hear From You</h3>
+                <p>Your feedback is essential to helping us improve accessibility. If you:</p>
+                <ul>
+                    <li>Encounter accessibility barriers on our website</li>
+                    <li>Have suggestions for improving accessibility</li>
+                    <li>Need assistance accessing any content or services</li>
+                    <li>Require content in an alternative format</li>
+                </ul>
+                
+                <p><strong>Please contact us:</strong></p>
+                <p>
+                    <strong>SilokiInk LLC - Accessibility Team</strong><br>
+                    1401 21st St, Ste R<br>
+                    Sacramento, CA 95811<br>
+                    Email: <a href="mailto:mart.jumbam@gmail.com">mart.jumbam@gmail.com</a><br>
+                    Website: <a href="https://siloki-ink.com">https://siloki-ink.com</a>
+                </p>
+
+                <p>When reporting an accessibility issue, please include:</p>
+                <ul>
+                    <li>The specific page or feature you were trying to access</li>
+                    <li>A description of the problem you encountered</li>
+                    <li>The assistive technology you were using (if applicable)</li>
+                    <li>Your browser and operating system</li>
+                    <li>Any steps that helped you work around the issue (optional)</li>
+                </ul>
+
+                <p>We will respond to accessibility feedback within <strong>3 business days</strong> and work to resolve issues as quickly as possible. For urgent accessibility barriers, please indicate this in your message.</p>
+            </div>
+
+            <h2>10. Alternative Formats</h2>
+            <p>If you require content from our website in an alternative format (such as large print, braille, audio, or simplified format), please contact us. We will work with you to provide the information you need in an accessible format.</p>
+            <p>We offer:</p>
+            <ul>
+                <li>Email correspondence for all inquiries</li>
+                <li>Phone consultation for those who prefer verbal communication</li>
+                <li>Flexible project communication methods based on client preferences</li>
+            </ul>
+
+            <h2>11. Commitment to Continuous Improvement</h2>
+            <p>Accessibility is not a one-time achievement but an ongoing commitment. We are dedicated to:</p>
+            <ul>
+                <li><strong>Regular Reviews:</strong> Conducting accessibility audits at least twice per year</li>
+                <li><strong>Staying Informed:</strong> Keeping up to date with the latest accessibility standards and best practices</li>
+                <li><strong>Team Training:</strong> Ensuring all team members understand accessibility principles</li>
+                <li><strong>User-Centered Design:</strong> Incorporating accessibility from the beginning of any new feature or page design</li>
+                <li><strong>Responsive Action:</strong> Addressing reported accessibility issues promptly</li>
+                <li><strong>Transparency:</strong> Being open about our progress and areas for improvement</li>
+            </ul>
+
+            <h2>12. Legal Compliance</h2>
+            <p>SilokiInk LLC is committed to complying with applicable accessibility laws and regulations, including:</p>
+            <ul>
+                <li>Americans with Disabilities Act (ADA)</li>
+                <li>Section 508 of the Rehabilitation Act</li>
+                <li>Web Content Accessibility Guidelines (WCAG) 2.1 Level AA</li>
+            </ul>
+
+            <h2>13. Additional Resources</h2>
+            <p>To learn more about web accessibility, visit these helpful resources:</p>
+            <ul>
+                <li><a href="https://www.w3.org/WAI/" target="_blank" rel="noopener noreferrer">W3C Web Accessibility Initiative (WAI)</a> - Comprehensive accessibility resources and guidelines</li>
+                <li><a href="https://www.ada.gov/" target="_blank" rel="noopener noreferrer">ADA.gov</a> - Information about the Americans with Disabilities Act</li>
+                <li><a href="https://webaim.org/" target="_blank" rel="noopener noreferrer">WebAIM</a> - Web accessibility training and resources</li>
+                <li><a href="https://www.section508.gov/" target="_blank" rel="noopener noreferrer">Section508.gov</a> - Federal accessibility standards and resources</li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility" target="_blank" rel="noopener noreferrer">MDN Web Docs - Accessibility</a> - Developer resources for accessibility</li>
+            </ul>
+
+            <h2>14. Updates to This Statement</h2>
+            <p>We review and update this Accessibility Statement regularly to reflect our ongoing efforts and improvements. This statement was last updated in February 2026.</p>
+            <p>If you have questions about this statement or would like to know about specific accessibility features, please contact us using the information provided above.</p>
+
+            <div class="commitment-box">
+                <p>Thank you for visiting SilokiInk LLC. We are honored to serve you and committed to ensuring our website is accessible to everyone.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <h2>Questions About Accessibility?</h2>
+        <p>We're here to help. Contact us with any accessibility questions or concerns.</p>
+        <a href="contact.html" class="cta-button">Contact Us Today</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="faq.html">FAQ</a>
+                <a href="blog.html">Blog</a>
+                <a href="contact.html">Contact</a>
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms-and-conditions.html">Terms & Conditions</a>
+                <a href="cookie-policy.html">Cookie Policy</a>
+                <a href="accessibility-statement.html">Accessibility</a>
+            </div>
+            <p>&copy; 2026 SilokiInk LLC. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div class="mobile-contact-float">
+        <a href="tel:+19095559330" class="mobile-contact-btn">
+            📞 Call Us
+        </a>
+    </div>
+
+    <!-- Cookie Consent Banner -->
+    <div class="cookie-consent-banner" id="cookieConsent">
+        <div class="cookie-consent-content">
+            <div class="cookie-consent-text">
+                We use cookies to improve your experience and analyze site traffic. By continuing to use this site, you consent to our use of cookies. 
+                <a href="cookie-policy.html">Learn more</a>
+            </div>
+            <div class="cookie-consent-actions">
+                <button class="cookie-consent-btn accept" onclick="acceptCookies()">Accept</button>
+                <button class="cookie-consent-btn decline" onclick="declineCookies()">Decline</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function checkCookieConsent() {
+            const consent = localStorage.getItem('cookieConsent');
+            if (!consent) {
+                setTimeout(function() {
+                    document.getElementById('cookieConsent').classList.add('show');
+                }, 1000);
+            }
+        }
+
+        function acceptCookies() {
+            localStorage.setItem('cookieConsent', 'accepted');
+            localStorage.setItem('cookieConsentDate', new Date().toISOString());
+            hideCookieBanner();
+            console.log('Cookies accepted');
+        }
+
+        function declineCookies() {
+            localStorage.setItem('cookieConsent', 'declined');
+            localStorage.setItem('cookieConsentDate', new Date().toISOString());
+            hideCookieBanner();
+            console.log('Cookies declined');
+            if (typeof ga !== 'undefined') {
+                window['ga-disable-UA-XXXXXX-X'] = true;
+            }
+        }
+
+        function hideCookieBanner() {
+            const banner = document.getElementById('cookieConsent');
+            banner.classList.remove('show');
+            setTimeout(function() {
+                banner.style.display = 'none';
+            }, 400);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            checkCookieConsent();
+        });
+    </script>
+</body>
+</html>

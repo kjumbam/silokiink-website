@@ -1,0 +1,1311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms and Conditions - SilokiInk LLC</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+
+        a[href^="#"] {
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --navy: #2c4a6b;
+            --light-navy: #3d5a7a;
+            --gold: #c9a961;
+            --cream: #f8f6f0;
+            --white: #ffffff;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --dark-navy: #1f3247;
+            --gold-light: #d4b76f;
+            --gold-dark: #b38a4f;
+            
+            --gradient-navy: linear-gradient(135deg, #2c4a6b 0%, #1f3247 100%);
+            --gradient-navy-reverse: linear-gradient(135deg, #3d5a7a 0%, #2c4a6b 100%);
+            --gradient-gold: linear-gradient(135deg, #c9a961 0%, #d4b76f 100%);
+            --gradient-cream: linear-gradient(180deg, #ffffff 0%, #f8f6f0 100%);
+            
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 1.5rem;
+            --space-lg: 2.5rem;
+            --space-xl: 4rem;
+            --space-2xl: 6rem;
+            --space-3xl: 8rem;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.75;
+            color: var(--text-dark);
+            background-color: var(--cream);
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        h1, .hero h1, .page-header h1 {
+            font-family: 'Garamond', serif;
+            font-weight: 400;
+            line-height: 1.2;
+            letter-spacing: -0.8px;
+        }
+
+        h2, .section-title {
+            font-family: 'Garamond', serif;
+            font-weight: 400;
+            line-height: 1.3;
+            letter-spacing: -0.4px;
+            margin-bottom: 1.5rem;
+        }
+
+        h3 {
+            font-family: 'Arial', sans-serif;
+            font-weight: 600;
+            line-height: 1.4;
+            letter-spacing: 0.3px;
+        }
+
+        p {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.85;
+            margin-bottom: 1.5rem;
+        }
+
+        .terms-content p,
+        .terms-content ul {
+            max-width: 70ch;
+            line-height: 1.9;
+        }
+
+        .nav-links a {
+            position: relative;
+            transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .page-header {
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        .page-header h1 {
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        .page-header p {
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        section:not(.hero):not(.cta-section):not(.page-header) {
+            padding: var(--space-2xl) 2rem;
+        }
+
+        .page-header {
+            padding: var(--space-2xl) 2rem var(--space-xl);
+        }
+
+        .section-title {
+            margin-bottom: var(--space-xl);
+        }
+
+        h2 {
+            margin-top: var(--space-xl);
+            margin-bottom: var(--space-md);
+        }
+
+        h3 {
+            margin-top: var(--space-lg);
+            margin-bottom: var(--space-sm);
+        }
+
+        p {
+            margin-bottom: var(--space-md);
+        }
+
+        @media (max-width: 768px) {
+            section:not(.hero):not(.cta-section):not(.page-header) {
+                padding: var(--space-xl) 1.5rem;
+            }
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(201, 169, 97, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .page-header {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header h1 {
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .page-header p {
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+        }
+
+        .section-title {
+            text-shadow: 0 1px 2px rgba(44, 74, 107, 0.08);
+        }
+
+        .logo {
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        nav {
+            background: linear-gradient(135deg, #2c4a6b 0%, #1f3247 100%);
+            padding: 1.2rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 
+                0 2px 8px rgba(0, 0, 0, 0.1),
+                0 4px 16px rgba(44, 74, 107, 0.15);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(201, 169, 97, 0.15);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            color: var(--white);
+            font-size: 2rem;
+            font-weight: 600;
+            text-decoration: none;
+            font-family: 'Garamond', serif;
+            letter-spacing: 0.5px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .logo:hover {
+            color: var(--gold);
+            transform: scale(1.05);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            font-family: 'Arial', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a:hover {
+            color: var(--white);
+        }
+
+        .page-header {
+            background: linear-gradient(135deg, #2c4a6b 0%, #1f3247 70%, #3d5a7a 100%);
+            color: var(--white);
+            padding: 5rem 2rem 3rem;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-family: 'Garamond', serif;
+        }
+
+        .page-header p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+            font-family: 'Arial', sans-serif;
+            opacity: 0.95;
+        }
+
+        .terms-content {
+            padding: 6rem 2rem;
+            background-color: var(--white);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .terms-content h2 {
+            color: var(--navy);
+            font-size: 2rem;
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+            font-family: 'Garamond', serif;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .terms-content h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 100%);
+            border-radius: 2px;
+        }
+
+        .terms-content h2:first-of-type {
+            margin-top: 0;
+        }
+
+        .terms-content h3 {
+            color: var(--navy);
+            font-size: 1.3rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .terms-content p {
+            font-size: 1.05rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+            font-family: 'Arial', sans-serif;
+            line-height: 1.8;
+        }
+
+        .terms-content ul {
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .terms-content li {
+            font-family: 'Arial', sans-serif;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--text-dark);
+            margin-bottom: 0.75rem;
+        }
+
+        .terms-content a {
+            color: var(--navy);
+            text-decoration: underline;
+            transition: color 0.3s ease;
+        }
+
+        .terms-content a:hover {
+            color: var(--gold);
+        }
+
+        .last-updated {
+            background: var(--cream);
+            padding: 1.5rem;
+            border-left: 4px solid var(--gold);
+            margin-bottom: 2rem;
+            border-radius: 4px;
+        }
+
+        .last-updated p {
+            margin-bottom: 0;
+            font-weight: 600;
+            color: var(--navy);
+        }
+
+        .contact-section {
+            background: var(--cream);
+            padding: 2rem;
+            border-radius: 8px;
+            margin-top: 3rem;
+            border: 1px solid rgba(44, 74, 107, 0.1);
+        }
+
+        .contact-section h3 {
+            color: var(--navy);
+            margin-top: 0;
+        }
+
+        .important-note {
+            background: #fff9e6;
+            border-left: 4px solid var(--gold);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 4px;
+        }
+
+        .important-note p {
+            margin-bottom: 0;
+            color: var(--text-dark);
+        }
+
+        .important-note strong {
+            color: var(--navy);
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #1f3247 0%, #2c4a6b 50%, #3d5a7a 100%);
+            color: var(--white);
+            padding: 5rem 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-family: 'Garamond', serif;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #c9a961 0%, #d4b76f 100%);
+            color: var(--navy);
+            padding: 1.2rem 3rem;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1.05rem;
+            letter-spacing: 0.5px;
+            font-family: 'Arial', sans-serif;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .cta-button:hover::before {
+            width: 400px;
+            height: 400px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+        }
+
+        .cta-button:active {
+            transform: translateY(-1px);
+        }
+
+        .cta-section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                repeating-linear-gradient(
+                    0deg,
+                    rgba(255, 255, 255, 0.03) 0px,
+                    transparent 1px,
+                    transparent 2px,
+                    rgba(255, 255, 255, 0.03) 3px
+                );
+            pointer-events: none;
+            opacity: 0.4;
+            z-index: 1;
+        }
+
+        .cta-section > * {
+            position: relative;
+            z-index: 2;
+        }
+
+        .terms-content {
+            background: linear-gradient(180deg, var(--white) 0%, var(--cream) 50%, var(--white) 100%);
+        }
+
+        section:not(.hero):not(.cta-section):not(.page-header) {
+            border-bottom: 1px solid rgba(44, 74, 107, 0.05);
+        }
+
+        *:focus-visible {
+            outline: 3px solid var(--gold);
+            outline-offset: 3px;
+            border-radius: 4px;
+        }
+
+        button:focus-visible,
+        a:focus-visible,
+        input:focus-visible,
+        textarea:focus-visible,
+        select:focus-visible {
+            outline: 3px solid var(--gold);
+            outline-offset: 3px;
+        }
+
+        ::selection {
+            background: var(--gold);
+            color: var(--navy);
+        }
+
+        ::-moz-selection {
+            background: var(--gold);
+            color: var(--navy);
+        }
+
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--cream);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, var(--navy) 0%, var(--light-navy) 100%);
+            border-radius: 6px;
+            border: 2px solid var(--cream);
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(180deg, var(--light-navy) 0%, var(--navy) 100%);
+        }
+
+        body {
+            animation: pageLoad 0.4s ease-out;
+        }
+
+        @keyframes pageLoad {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        img,
+        iframe,
+        video {
+            max-width: 100%;
+            height: auto;
+        }
+
+        a {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        @media print {
+            nav,
+            footer,
+            .cta-section,
+            .cta-button,
+            .mobile-contact-float {
+                display: none;
+            }
+            
+            body {
+                background: white;
+                color: black;
+            }
+        }
+
+        @media (prefers-contrast: high) {
+            .cta-button {
+                border: 2px solid currentColor;
+            }
+        }
+
+        footer {
+            background: linear-gradient(135deg, #333333 0%, #222222 100%);
+            color: var(--white);
+            padding: 4rem 2rem 2rem;
+            text-align: center;
+            border-top: 3px solid var(--gold);
+            position: relative;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent 0%, var(--gold) 50%, transparent 100%);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem;
+            margin-bottom: 2.5rem;
+            flex-wrap: wrap;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            font-family: 'Arial', sans-serif;
+            position: relative;
+        }
+
+        .footer-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--gold);
+            transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+
+        .footer-links a:hover::after {
+            width: 100%;
+        }
+
+        footer p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links a,
+            .cta-button,
+            .footer-links a {
+                min-height: 44px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            body {
+                font-size: 16px;
+            }
+
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+
+            .page-header p {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+                line-height: 1.3;
+            }
+
+            .terms-content h2 {
+                font-size: 1.7rem;
+            }
+
+            .terms-content h3 {
+                font-size: 1.2rem;
+            }
+            
+            .cta-button {
+                padding: 1rem 2rem;
+                font-size: 1rem;
+                width: 100%;
+                max-width: 320px;
+            }
+            
+            .nav-links {
+                gap: 1.2rem;
+                font-size: 0.85rem;
+            }
+        }
+
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .page-header h1 {
+                font-size: 2.7rem;
+            }
+            
+            .section-title {
+                font-size: 2.3rem;
+            }
+        }
+
+        .mobile-contact-float {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-contact-float {
+                display: block;
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                z-index: 999;
+            }
+            
+            .mobile-contact-btn {
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                background: linear-gradient(135deg, #c9a961 0%, #d4b76f 100%);
+                color: var(--navy);
+                padding: 1rem 1.5rem;
+                border-radius: 50px;
+                text-decoration: none;
+                font-weight: 700;
+                font-family: 'Arial', sans-serif;
+                font-size: 0.95rem;
+                box-shadow: 
+                    0 4px 16px rgba(201, 169, 97, 0.4),
+                    0 8px 24px rgba(0, 0, 0, 0.15);
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+            
+            .mobile-contact-btn:active {
+                transform: scale(0.95);
+            }
+        }
+
+        /* Cookie Consent Banner */
+        .cookie-consent-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, #2c4a6b 0%, #1f3247 100%);
+            color: var(--white);
+            padding: 1.5rem 2rem;
+            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
+            z-index: 10000;
+            transform: translateY(100%);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            font-family: 'Arial', sans-serif;
+        }
+
+        .cookie-consent-banner.show {
+            transform: translateY(0);
+        }
+
+        .cookie-consent-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .cookie-consent-text {
+            flex: 1;
+            min-width: 300px;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        .cookie-consent-text a {
+            color: var(--gold);
+            text-decoration: underline;
+            transition: color 0.3s ease;
+        }
+
+        .cookie-consent-text a:hover {
+            color: var(--gold-light);
+        }
+
+        .cookie-consent-actions {
+            display: flex;
+            gap: 1rem;
+            flex-shrink: 0;
+        }
+
+        .cookie-consent-btn {
+            padding: 0.75rem 2rem;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            font-family: 'Arial', sans-serif;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: none;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        .cookie-consent-btn.accept {
+            background: linear-gradient(135deg, #c9a961 0%, #d4b76f 100%);
+            color: var(--navy);
+            box-shadow: 0 2px 8px rgba(201, 169, 97, 0.3);
+        }
+
+        .cookie-consent-btn.accept:hover {
+            background: linear-gradient(135deg, #d4b76f 0%, #c9a961 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(201, 169, 97, 0.4);
+        }
+
+        .cookie-consent-btn.decline {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .cookie-consent-btn.decline:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        @media (max-width: 768px) {
+            .cookie-consent-banner {
+                padding: 1.25rem 1.5rem;
+            }
+
+            .cookie-consent-content {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 1.25rem;
+            }
+
+            .cookie-consent-text {
+                min-width: auto;
+                font-size: 0.9rem;
+                text-align: center;
+            }
+
+            .cookie-consent-actions {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+
+            .cookie-consent-btn {
+                width: 100%;
+                padding: 0.875rem 1.5rem;
+                text-align: center;
+            }
+
+            .mobile-contact-float {
+                bottom: auto;
+                top: 80px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">SilokiInk</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1>Terms and Conditions</h1>
+        <p>Please read these terms carefully before using our services</p>
+    </section>
+
+    <!-- Terms Content -->
+    <section class="terms-content">
+        <div class="container">
+            <div class="last-updated">
+                <p>Last Updated: February 2026</p>
+            </div>
+
+            <p>Welcome to SilokiInk LLC. These Terms and Conditions ("Terms") govern your use of our services and website. By engaging our services or using our website at <a href="https://siloki-ink.com">https://siloki-ink.com</a>, you agree to be bound by these Terms.</p>
+
+            <h2>1. Acceptance of Terms</h2>
+            <p>By accessing our website, submitting inquiries, or engaging SilokiInk LLC for services, you acknowledge that you have read, understood, and agree to be bound by these Terms and Conditions, as well as our Privacy Policy.</p>
+            <p>If you do not agree with any part of these Terms, please do not use our services or website.</p>
+
+            <h2>2. About SilokiInk LLC</h2>
+            <p>SilokiInk LLC is a professional writing, translation, editing, and storytelling services company based in Sacramento, CA. We provide high-quality language services to individuals, authors, businesses, and organizations.</p>
+            <p><strong>Company Information:</strong></p>
+            <ul>
+                <li>Company Name: SilokiInk LLC</li>
+                <li>Address: 1401 21st St, Ste R, Sacramento, CA 95811, United States</li>
+                <li>Website: <a href="https://siloki-ink.com">https://siloki-ink.com</a></li>
+                <li>Contact: <a href="mailto:mart.jumbam@gmail.com">mart.jumbam@gmail.com</a></li>
+            </ul>
+
+            <h2>3. Services Description</h2>
+            <p>SilokiInk LLC offers the following professional services:</p>
+            
+            <h3>Writing Services</h3>
+            <ul>
+                <li><strong>Ghostwriting:</strong> Creating original written content on behalf of clients, including books, articles, essays, and other written works</li>
+                <li><strong>Autobiography & Biography Writing:</strong> Crafting life stories and personal narratives</li>
+                <li><strong>Content Writing:</strong> Developing various types of written content for different purposes and audiences</li>
+                <li><strong>Creative Writing:</strong> Producing fiction, poetry, and other creative literary works</li>
+            </ul>
+
+            <h3>Editing Services</h3>
+            <ul>
+                <li><strong>Copy Editing:</strong> Correcting grammar, spelling, punctuation, and style issues</li>
+                <li><strong>Substantive Editing:</strong> Improving structure, clarity, flow, and overall quality of content</li>
+                <li><strong>Proofreading:</strong> Final review for errors before publication</li>
+            </ul>
+
+            <h3>Translation Services</h3>
+            <ul>
+                <li><strong>Document Translation:</strong> Professional translation between English and French</li>
+                <li><strong>Literary Translation:</strong> Translation of books, articles, and creative works</li>
+                <li><strong>Business Translation:</strong> Translation of business documents, reports, and communications</li>
+            </ul>
+
+            <h3>Interpretation Services</h3>
+            <ul>
+                <li><strong>Consecutive Interpretation:</strong> Real-time interpretation during meetings, conferences, and events</li>
+                <li><strong>Simultaneous Interpretation:</strong> Live interpretation services for presentations and gatherings</li>
+            </ul>
+
+            <h3>Consulting Services</h3>
+            <ul>
+                <li><strong>Writing Consultation:</strong> Guidance and advice on writing projects</li>
+                <li><strong>Manuscript Assessment:</strong> Professional evaluation of written works</li>
+                <li><strong>Project Planning:</strong> Strategic planning for writing and translation projects</li>
+            </ul>
+
+            <h2>4. Client Responsibilities</h2>
+            <p>When engaging our services, clients agree to:</p>
+            <ul>
+                <li><strong>Provide Accurate Information:</strong> Supply complete, accurate, and timely information necessary for project completion</li>
+                <li><strong>Timely Communication:</strong> Respond to inquiries, requests for clarification, and feedback requests within agreed-upon timeframes</li>
+                <li><strong>Respect Copyright:</strong> Ensure that any materials provided to SilokiInk do not infringe on third-party intellectual property rights</li>
+                <li><strong>Timely Payment:</strong> Make payments according to the agreed-upon payment terms</li>
+                <li><strong>Clear Project Scope:</strong> Clearly communicate project requirements, expectations, and deadlines</li>
+                <li><strong>Constructive Feedback:</strong> Provide specific, constructive feedback during revision stages</li>
+            </ul>
+
+            <h2>5. Intellectual Property Rights</h2>
+            
+            <h3>Client Ownership</h3>
+            <p><strong>Upon full payment, clients own all rights to the final delivered work.</strong> This includes:</p>
+            <ul>
+                <li>Full copyright ownership of the completed written content</li>
+                <li>The right to publish, distribute, modify, and use the work as desired</li>
+                <li>The right to claim authorship of the work</li>
+            </ul>
+
+            <h3>Portfolio and Promotional Rights</h3>
+            <p>SilokiInk LLC retains the right to:</p>
+            <ul>
+                <li>Reference completed projects in our portfolio (with client permission for confidential projects)</li>
+                <li>Use general project descriptions (without disclosing confidential client information) for promotional and marketing purposes</li>
+                <li>Display excerpts or samples of work (with client permission) on our website and marketing materials</li>
+            </ul>
+            <p>Clients may request confidentiality for specific projects, in which case we will not publicly reference or display the work without written permission.</p>
+
+            <h3>Work-in-Progress</h3>
+            <p>Until final payment is received, SilokiInk LLC retains all rights to work-in-progress, drafts, and preliminary materials.</p>
+
+            <h3>Pre-existing Materials</h3>
+            <p>Clients retain all rights to any pre-existing materials, content, or intellectual property they provide to SilokiInk LLC for the purpose of completing projects.</p>
+
+            <h2>6. Payment Terms</h2>
+            
+            <h3>Quotes and Estimates</h3>
+            <p>All quotes and estimates are based on the project scope as initially described. Changes to project scope may result in adjusted pricing.</p>
+
+            <h3>Payment Structure</h3>
+            <p>Payment terms vary depending on project type and size:</p>
+            <ul>
+                <li><strong>Small Projects:</strong> Full payment due upon project completion</li>
+                <li><strong>Medium Projects:</strong> 50% deposit required to begin work, with remaining balance due upon completion</li>
+                <li><strong>Large Projects:</strong> Payment schedule established in project agreement (typically milestone-based payments)</li>
+                <li><strong>Ongoing Services:</strong> Monthly invoicing or retainer arrangements as agreed</li>
+            </ul>
+
+            <h3>Invoicing</h3>
+            <p>Invoices will be sent electronically via email. Payment is due within the timeframe specified on the invoice (typically within 15-30 days of invoice date).</p>
+
+            <h3>Accepted Payment Methods</h3>
+            <ul>
+                <li>Bank transfer (ACH/Wire)</li>
+                <li>Check (made payable to SilokiInk LLC)</li>
+                <li>Digital payment platforms (PayPal, Venmo, Zelle) as agreed</li>
+                <li>Credit/Debit card (if applicable)</li>
+            </ul>
+
+            <h3>Late Payments</h3>
+            <p>Payments not received by the due date may be subject to:</p>
+            <ul>
+                <li>A late fee of 1.5% per month (18% annual percentage rate) or the maximum rate permitted by law, whichever is lower</li>
+                <li>Suspension of work on ongoing projects until payment is received</li>
+                <li>Collection proceedings for severely overdue accounts</li>
+            </ul>
+
+            <h3>Currency</h3>
+            <p>All prices are quoted and payable in United States Dollars (USD) unless otherwise specified.</p>
+
+            <h2>7. Project Timelines and Deliverables</h2>
+            
+            <h3>Timeline Estimates</h3>
+            <p>Project timelines are estimates based on the agreed-upon project scope and client availability for feedback and approvals. Timelines may be affected by:</p>
+            <ul>
+                <li>Changes to project scope</li>
+                <li>Delays in receiving client feedback or materials</li>
+                <li>Unforeseen circumstances or emergencies</li>
+                <li>Complexity of subject matter requiring additional research</li>
+            </ul>
+
+            <h3>Deliverables</h3>
+            <p>Final deliverables will be provided in the format(s) agreed upon in the project agreement (e.g., Microsoft Word, PDF, Google Docs).</p>
+
+            <h3>Client Review Periods</h3>
+            <p>Clients are expected to review drafts and provide feedback within the agreed-upon timeframe (typically 5-10 business days). Projects may be considered complete if no feedback is received within 30 days of delivery.</p>
+
+            <h2>8. Revisions Policy</h2>
+            
+            <h3>Included Revisions</h3>
+            <p>Our standard services include a reasonable number of revisions based on project type:</p>
+            <ul>
+                <li><strong>Editing Projects:</strong> One round of revisions included</li>
+                <li><strong>Writing Projects:</strong> Two rounds of revisions included for major content changes</li>
+                <li><strong>Translation Projects:</strong> One round of revisions included for accuracy and clarity</li>
+            </ul>
+
+            <h3>Scope of Revisions</h3>
+            <p>Included revisions cover corrections and adjustments within the original project scope. Revisions do not include:</p>
+            <ul>
+                <li>Substantial changes to project scope or direction</li>
+                <li>Complete rewrites due to changed client preferences</li>
+                <li>New content additions beyond the original agreement</li>
+            </ul>
+
+            <h3>Additional Revisions</h3>
+            <p>Revisions beyond those included in the project agreement will be billed at our standard hourly rate or as a separate project, depending on the extent of changes required.</p>
+
+            <h3>Revision Timeline</h3>
+            <p>Revision requests must be submitted in writing with specific, detailed feedback. Turnaround time for revisions depends on the extent of changes and current workload.</p>
+
+            <h2>9. Cancellation and Refund Policy</h2>
+            
+            <h3>Client Cancellation</h3>
+            <p>Clients may cancel a project at any time by providing written notice. In the event of cancellation:</p>
+            <ul>
+                <li><strong>Before Work Begins:</strong> Full refund of any deposits, minus a 10% administrative fee</li>
+                <li><strong>After Work Begins:</strong> Payment due for all work completed to date, calculated based on project milestones or hourly rate. Remaining deposit balance will be refunded.</li>
+                <li><strong>Final Stages:</strong> If project is more than 75% complete, full project fee is due</li>
+            </ul>
+
+            <h3>SilokiInk Cancellation</h3>
+            <p>SilokiInk LLC reserves the right to cancel or refuse service in the following situations:</p>
+            <ul>
+                <li>Client requests services that violate our ethical standards or legal requirements</li>
+                <li>Client fails to provide necessary materials or feedback after repeated requests</li>
+                <li>Client demonstrates abusive, threatening, or unprofessional behavior</li>
+                <li>Non-payment or repeated late payments</li>
+            </ul>
+            <p>In such cases, clients will be charged only for work completed to date, and any unused portion of deposits will be refunded.</p>
+
+            <h3>Refund Process</h3>
+            <p>Approved refunds will be processed within 14 business days to the original payment method.</p>
+
+            <h3>Quality Guarantee</h3>
+            <p>We stand behind the quality of our work. If you are unsatisfied with the final deliverable due to quality issues (not subjective preference changes), we will work with you to resolve concerns or provide a partial refund as appropriate.</p>
+
+            <h2>10. Confidentiality</h2>
+            <p>SilokiInk LLC respects client confidentiality and privacy. We will not disclose client information or project details to third parties except:</p>
+            <ul>
+                <li>With explicit client permission</li>
+                <li>When required by law or legal process</li>
+                <li>To service providers necessary for project completion (e.g., specialized translators), who are bound by confidentiality agreements</li>
+            </ul>
+            <p>For projects requiring additional confidentiality protections, Non-Disclosure Agreements (NDAs) can be executed upon request.</p>
+
+            <h2>11. Limitation of Liability</h2>
+            
+            <div class="important-note">
+                <p><strong>Important:</strong> Please read this section carefully as it limits our liability to you.</p>
+            </div>
+
+            <p>To the maximum extent permitted by law:</p>
+            <ul>
+                <li>SilokiInk LLC's total liability for any claim arising from or related to our services shall not exceed the total fees paid by the client for the specific project in question</li>
+                <li>SilokiInk LLC shall not be liable for any indirect, incidental, consequential, special, or punitive damages, including but not limited to loss of profits, business opportunities, or data</li>
+                <li>SilokiInk LLC is not responsible for technical issues, including data loss, system failures, or transmission errors</li>
+                <li>Clients are responsible for maintaining backups of all materials provided to SilokiInk LLC</li>
+            </ul>
+
+            <h3>Professional Services Disclaimer</h3>
+            <p>SilokiInk LLC provides professional writing, editing, and translation services. However:</p>
+            <ul>
+                <li>We do not guarantee publication, commercial success, or specific outcomes from our services</li>
+                <li>Translation services aim for accuracy but may not capture every cultural nuance in highly technical or specialized contexts</li>
+                <li>Editing services improve clarity and correctness but do not guarantee error-free content</li>
+                <li>Clients are responsible for final review and fact-checking of all content before publication or distribution</li>
+            </ul>
+
+            <h2>12. Warranty and Disclaimer</h2>
+            <p>SilokiInk LLC warrants that:</p>
+            <ul>
+                <li>Services will be performed with professional care and expertise</li>
+                <li>All work will be original (except for editing/translation of client-provided content)</li>
+                <li>We will meet agreed-upon deadlines to the best of our ability</li>
+            </ul>
+
+            <p><strong>EXCEPT AS EXPRESSLY PROVIDED IN THESE TERMS, SILOKIINK LLC MAKES NO WARRANTIES, EXPRESS OR IMPLIED, INCLUDING WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR NON-INFRINGEMENT.</strong></p>
+
+            <h2>13. Governing Law and Jurisdiction</h2>
+            <p>These Terms and Conditions shall be governed by and construed in accordance with the laws of the State of California, United States, without regard to its conflict of law provisions.</p>
+            <p>Any disputes arising from or relating to these Terms or our services shall be subject to the exclusive jurisdiction of the state and federal courts located in Sacramento County, California.</p>
+
+            <h2>14. Dispute Resolution</h2>
+            
+            <h3>Informal Resolution</h3>
+            <p>In the event of any disagreement or dispute, we encourage clients to first contact us directly to seek an informal resolution. We are committed to working with clients to resolve issues amicably and professionally.</p>
+
+            <h3>Mediation</h3>
+            <p>If informal resolution is unsuccessful, both parties agree to attempt to resolve the dispute through mediation before pursuing litigation. Mediation costs will be shared equally between parties.</p>
+
+            <h3>Arbitration</h3>
+            <p>If mediation fails, disputes may be resolved through binding arbitration in accordance with the rules of the American Arbitration Association. Arbitration shall take place in Sacramento, CA 95811.</p>
+
+            <h3>Exceptions</h3>
+            <p>Either party may seek injunctive relief in court to protect intellectual property rights or confidential information without first pursuing mediation or arbitration.</p>
+
+            <h2>15. Indemnification</h2>
+            <p>Clients agree to indemnify and hold harmless SilokiInk LLC, its owners, employees, and contractors from any claims, damages, losses, or expenses (including reasonable attorney fees) arising from:</p>
+            <ul>
+                <li>Client's breach of these Terms and Conditions</li>
+                <li>Client's violation of any law or regulation</li>
+                <li>Infringement of third-party intellectual property rights by materials provided by the client</li>
+                <li>Client's use or publication of completed work in a manner that violates law or third-party rights</li>
+            </ul>
+
+            <h2>16. Force Majeure</h2>
+            <p>SilokiInk LLC shall not be liable for any failure or delay in performance due to circumstances beyond our reasonable control, including but not limited to:</p>
+            <ul>
+                <li>Natural disasters, pandemics, or public health emergencies</li>
+                <li>War, terrorism, civil unrest, or government actions</li>
+                <li>Power outages, internet service disruptions, or technology failures</li>
+                <li>Severe illness or personal emergencies affecting key personnel</li>
+            </ul>
+            <p>In such events, project timelines will be extended by a reasonable period, and clients will be notified as soon as possible.</p>
+
+            <h2>17. Independent Contractor Relationship</h2>
+            <p>SilokiInk LLC operates as an independent contractor. Nothing in these Terms creates an employment, partnership, joint venture, or agency relationship between SilokiInk LLC and clients.</p>
+
+            <h2>18. Severability</h2>
+            <p>If any provision of these Terms is found to be invalid, illegal, or unenforceable, the remaining provisions shall continue in full force and effect. The invalid provision shall be modified to the minimum extent necessary to make it valid and enforceable.</p>
+
+            <h2>19. Entire Agreement</h2>
+            <p>These Terms and Conditions, together with any project-specific agreements, invoices, and our Privacy Policy, constitute the entire agreement between SilokiInk LLC and the client regarding our services. These Terms supersede all prior oral or written agreements, understandings, or representations.</p>
+
+            <h2>20. Amendments and Modifications</h2>
+            <p>SilokiInk LLC reserves the right to modify these Terms and Conditions at any time. Changes will be effective immediately upon posting to our website with an updated "Last Updated" date.</p>
+            <p>For existing projects, the Terms in effect at the time of project agreement shall apply. For new projects or services, the most current Terms shall apply.</p>
+            <p>Continued use of our services after changes to these Terms constitutes acceptance of the modified Terms.</p>
+
+            <h2>21. Waiver</h2>
+            <p>No waiver of any provision of these Terms shall be deemed a further or continuing waiver of such provision or any other provision. SilokiInk LLC's failure to enforce any right or provision of these Terms shall not constitute a waiver of such right or provision.</p>
+
+            <h2>22. Assignment</h2>
+            <p>Clients may not assign or transfer their rights or obligations under these Terms without prior written consent from SilokiInk LLC. SilokiInk LLC may assign these Terms or delegate responsibilities to qualified contractors or successors in interest.</p>
+
+            <h2>23. Contact Information</h2>
+            <div class="contact-section">
+                <h3>Questions About These Terms?</h3>
+                <p>If you have questions, concerns, or require clarification about these Terms and Conditions, please contact us:</p>
+                <p>
+                    <strong>SilokiInk LLC</strong><br>
+                    1401 21st St, Ste R<br>
+                    Sacramento, CA 95811<br>
+                    Email: <a href="mailto:mart.jumbam@gmail.com">mart.jumbam@gmail.com</a><br>
+                    Website: <a href="https://siloki-ink.com">https://siloki-ink.com</a>
+                </p>
+                <p>We are committed to transparent communication and will respond to inquiries as promptly as possible.</p>
+            </div>
+
+            <h2>24. Acknowledgment</h2>
+            <p>By engaging SilokiInk LLC's services or using our website, you acknowledge that you have read, understood, and agree to be bound by these Terms and Conditions. You also acknowledge that you have had the opportunity to seek independent legal advice regarding these Terms.</p>
+
+            <div class="important-note">
+                <p><strong>Thank you for choosing SilokiInk LLC.</strong> We look forward to working with you and bringing your writing and language projects to life with professionalism, creativity, and care.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <h2>Ready to Begin Your Project?</h2>
+        <p>Let's discuss how SilokiInk can help bring your vision to life.</p>
+        <a href="contact.html" class="cta-button">Get Started Today</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="faq.html">FAQ</a>
+                <a href="blog.html">Blog</a>
+                <a href="contact.html">Contact</a>
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms-and-conditions.html">Terms & Conditions</a>
+                <a href="cookie-policy.html">Cookie Policy</a>
+                <a href="accessibility-statement.html">Accessibility</a>
+            </div>
+            <p>&copy; 2026 SilokiInk LLC. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div class="mobile-contact-float">
+        <a href="tel:+19095559330" class="mobile-contact-btn">
+            📞 Call Us
+        </a>
+    </div>
+
+    <!-- Cookie Consent Banner -->
+    <div class="cookie-consent-banner" id="cookieConsent">
+        <div class="cookie-consent-content">
+            <div class="cookie-consent-text">
+                We use cookies to improve your experience and analyze site traffic. By continuing to use this site, you consent to our use of cookies. 
+                <a href="cookie-policy.html">Learn more</a>
+            </div>
+            <div class="cookie-consent-actions">
+                <button class="cookie-consent-btn accept" onclick="acceptCookies()">Accept</button>
+                <button class="cookie-consent-btn decline" onclick="declineCookies()">Decline</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function checkCookieConsent() {
+            const consent = localStorage.getItem('cookieConsent');
+            if (!consent) {
+                setTimeout(function() {
+                    document.getElementById('cookieConsent').classList.add('show');
+                }, 1000);
+            }
+        }
+
+        function acceptCookies() {
+            localStorage.setItem('cookieConsent', 'accepted');
+            localStorage.setItem('cookieConsentDate', new Date().toISOString());
+            hideCookieBanner();
+            console.log('Cookies accepted');
+        }
+
+        function declineCookies() {
+            localStorage.setItem('cookieConsent', 'declined');
+            localStorage.setItem('cookieConsentDate', new Date().toISOString());
+            hideCookieBanner();
+            console.log('Cookies declined');
+            if (typeof ga !== 'undefined') {
+                window['ga-disable-UA-XXXXXX-X'] = true;
+            }
+        }
+
+        function hideCookieBanner() {
+            const banner = document.getElementById('cookieConsent');
+            banner.classList.remove('show');
+            setTimeout(function() {
+                banner.style.display = 'none';
+            }, 400);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            checkCookieConsent();
+        });
+    </script>
+</body>
+</html>

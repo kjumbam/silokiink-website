@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAQ - SilokiInk LLC</title>
+    <title>Cookie Policy - SilokiInk LLC</title>
     <style>
         * {
             margin: 0;
@@ -11,13 +11,11 @@
             box-sizing: border-box;
         }
 
-        /* Smooth Scrolling */
         html {
             scroll-behavior: smooth;
-            scroll-padding-top: 80px; /* Account for sticky nav */
+            scroll-padding-top: 80px;
         }
 
-        /* Smooth Scroll for Anchor Links */
         a[href^="#"] {
             scroll-behavior: smooth;
         }
@@ -34,26 +32,23 @@
             --gold-light: #d4b76f;
             --gold-dark: #b38a4f;
             
-            /* Gradient Definitions */
             --gradient-navy: linear-gradient(135deg, #2c4a6b 0%, #1f3247 100%);
             --gradient-navy-reverse: linear-gradient(135deg, #3d5a7a 0%, #2c4a6b 100%);
             --gradient-gold: linear-gradient(135deg, #c9a961 0%, #d4b76f 100%);
             --gradient-cream: linear-gradient(180deg, #ffffff 0%, #f8f6f0 100%);
             
-            /* Spacing Scale */
-            --space-xs: 0.5rem;   /* 8px */
-            --space-sm: 1rem;     /* 16px */
-            --space-md: 1.5rem;   /* 24px */
-            --space-lg: 2.5rem;   /* 40px */
-            --space-xl: 4rem;     /* 64px */
-            --space-2xl: 6rem;    /* 96px */
-            --space-3xl: 8rem;    /* 128px */
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 1.5rem;
+            --space-lg: 2.5rem;
+            --space-xl: 4rem;
+            --space-2xl: 6rem;
+            --space-3xl: 8rem;
         }
 
-        /* Enhanced Body Text */
         body {
             font-family: 'Georgia', serif;
-            line-height: 1.75; /* Improved from 1.6 */
+            line-height: 1.75;
             color: var(--text-dark);
             background-color: var(--cream);
             font-size: 16px;
@@ -61,12 +56,11 @@
             -moz-osx-font-smoothing: grayscale;
         }
 
-        /* Enhanced Headings */
         h1, .hero h1, .page-header h1 {
             font-family: 'Garamond', serif;
             font-weight: 400;
             line-height: 1.2;
-            letter-spacing: -0.8px; /* Tighter for elegance */
+            letter-spacing: -0.8px;
         }
 
         h2, .section-title {
@@ -84,23 +78,18 @@
             letter-spacing: 0.3px;
         }
 
-        /* Enhanced Paragraph Spacing */
         p {
             font-family: 'Arial', sans-serif;
-            line-height: 1.85; /* More breathing room */
+            line-height: 1.85;
             margin-bottom: 1.5rem;
         }
 
-        /* Optimal Reading Width */
-        .about-section p,
-        .service-text p,
-        .faq-answer,
-        .intro-text p {
-            max-width: 70ch; /* Optimal line length */
+        .cookie-content p,
+        .cookie-content ul {
+            max-width: 70ch;
             line-height: 1.9;
         }
 
-        /* Enhanced Link Underline Animation */
         .nav-links a {
             position: relative;
             transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -121,91 +110,6 @@
             width: 100%;
         }
 
-        /* Enhanced Card Hover Effects */
-        .service-card,
-        .blog-card,
-        .testimonial,
-        .case-study {
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-        }
-
-        .service-card::before,
-        .blog-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            border-radius: 10px;
-            background: linear-gradient(135deg, rgba(201, 169, 97, 0.1) 0%, transparent 100%);
-            opacity: 0;
-            transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            pointer-events: none;
-        }
-
-        .service-card:hover::before,
-        .blog-card:hover::before {
-            opacity: 1;
-        }
-
-        /* Enhanced Icon Hover */
-        .service-icon {
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .service-card:hover .service-icon {
-            transform: scale(1.15) rotate(-8deg);
-            filter: drop-shadow(0 8px 16px rgba(201, 169, 97, 0.3));
-        }
-
-        /* Enhanced Button Ripple Effect */
-        .cta-button {
-            position: relative;
-            overflow: hidden;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .cta-button::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.3);
-            transform: translate(-50%, -50%);
-            transition: width 0.6s, height 0.6s;
-        }
-
-        .cta-button:hover::before {
-            width: 400px;
-            height: 400px;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-        }
-
-        /* Enhanced Read More Links */
-        .read-more {
-            display: inline-block;
-            position: relative;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .read-more::after {
-            content: ' →';
-            transition: margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .read-more:hover::after {
-            margin-left: 0.5rem;
-        }
-
-        /* Animation Keyframes */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -222,57 +126,18 @@
             to { opacity: 1; }
         }
 
-        @keyframes scaleIn {
-            from {
-                opacity: 0;
-                transform: scale(0.95);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
-        /* Apply Animations to Elements */
-        .hero {
+        .page-header {
             animation: fadeIn 0.8s ease-out;
         }
 
-        .hero h1 {
+        .page-header h1 {
             animation: fadeInUp 0.8s ease-out 0.2s both;
         }
 
-        .hero p {
+        .page-header p {
             animation: fadeInUp 0.8s ease-out 0.4s both;
         }
 
-        .cta-button {
-            animation: fadeInUp 0.8s ease-out 0.6s both;
-        }
-
-        .service-card,
-        .blog-card,
-        .testimonial,
-        .value-card {
-            animation: fadeInUp 0.6s ease-out both;
-        }
-
-        .service-card:nth-child(1),
-        .blog-card:nth-child(1) { animation-delay: 0.1s; }
-        .service-card:nth-child(2),
-        .blog-card:nth-child(2) { animation-delay: 0.2s; }
-        .service-card:nth-child(3),
-        .blog-card:nth-child(3) { animation-delay: 0.3s; }
-        .service-card:nth-child(4),
-        .blog-card:nth-child(4) { animation-delay: 0.4s; }
-        .service-card:nth-child(5),
-        .blog-card:nth-child(5) { animation-delay: 0.5s; }
-
-        .section-title {
-            animation: fadeInUp 0.7s ease-out both;
-        }
-
-        /* Accessibility - Respect Reduced Motion Preference */
         @media (prefers-reduced-motion: reduce) {
             * {
                 animation-duration: 0.01ms !important;
@@ -281,20 +146,14 @@
             }
         }
 
-        /* Section Spacing */
         section:not(.hero):not(.cta-section):not(.page-header) {
             padding: var(--space-2xl) 2rem;
-        }
-
-        .hero {
-            padding: var(--space-3xl) 2rem;
         }
 
         .page-header {
             padding: var(--space-2xl) 2rem var(--space-xl);
         }
 
-        /* Content Spacing */
         .section-title {
             margin-bottom: var(--space-xl);
         }
@@ -313,77 +172,12 @@
             margin-bottom: var(--space-md);
         }
 
-        /* Grid Spacing */
-        .services-grid,
-        .blog-grid,
-        .testimonials-grid,
-        .values-grid {
-            gap: var(--space-lg);
-        }
-
-        /* Card Internal Spacing */
-        .service-card,
-        .blog-card,
-        .testimonial {
-            padding: var(--space-lg);
-            margin-bottom: var(--space-lg);
-        }
-
-        /* Responsive Spacing */
         @media (max-width: 768px) {
             section:not(.hero):not(.cta-section):not(.page-header) {
                 padding: var(--space-xl) 1.5rem;
             }
-            
-            .hero {
-                padding: var(--space-2xl) 1.5rem;
-            }
         }
 
-        /* Section Title Accent Line */
-        .section-title {
-            position: relative;
-            padding-bottom: 1rem;
-        }
-
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 3px;
-            background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 100%);
-            margin: 1rem auto 0;
-            border-radius: 2px;
-        }
-
-        /* Card Corner Accent */
-        .service-card::after,
-        .blog-card::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, rgba(201, 169, 97, 0.15) 0%, transparent 100%);
-            border-radius: 0 10px 0 0;
-            pointer-events: none;
-        }
-
-        /* Testimonial Quote Marks */
-        .testimonial-quote::before {
-            content: '"';
-            font-size: 5rem;
-            color: var(--gold);
-            opacity: 0.15;
-            font-family: 'Garamond', serif;
-            line-height: 0;
-            display: block;
-            margin-bottom: 1rem;
-        }
-
-        /* Hero Background Pattern */
-        .hero::before,
         .page-header::before {
             content: '';
             position: absolute;
@@ -395,51 +189,27 @@
             pointer-events: none;
         }
 
-        .hero,
         .page-header {
             position: relative;
             overflow: hidden;
         }
 
-        /* Section Divider Lines */
-        section:not(.hero):not(.cta-section):not(.page-header)::before {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 2px;
-            background: linear-gradient(90deg, transparent 0%, var(--gold) 50%, transparent 100%);
-            margin: 0 auto var(--space-xl);
-        }
-
-        /* Hero & Header Text Shadows */
-        .hero h1,
         .page-header h1 {
             text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
         }
 
-        .hero p,
         .page-header p {
             text-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
         }
 
-        /* Section Title Shadows */
         .section-title {
             text-shadow: 0 1px 2px rgba(44, 74, 107, 0.08);
         }
 
-        /* Logo Shadow for Better Contrast */
         .logo {
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
         }
 
-        /* Gold Text Glow Effect */
-        .blog-category,
-        .value-card h3:hover,
-        a:hover {
-            text-shadow: 0 0 20px rgba(201, 169, 97, 0.3);
-        }
-
-        /* Enhanced Navigation */
         nav {
             background: linear-gradient(135deg, #2c4a6b 0%, #1f3247 100%);
             padding: 1.2rem 0;
@@ -462,7 +232,6 @@
             padding: 0 2rem;
         }
 
-        /* Logo Enhancement */
         .logo {
             color: var(--white);
             font-size: 2rem;
@@ -479,7 +248,6 @@
             transform: scale(1.05);
         }
 
-        /* Nav Links Enhancement */
         .nav-links {
             display: flex;
             list-style: none;
@@ -516,11 +284,14 @@
         }
 
         .page-header p {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
             font-family: 'Arial', sans-serif;
+            opacity: 0.95;
         }
 
-        .faq-section {
+        .cookie-content {
             padding: 6rem 2rem;
             background-color: var(--white);
         }
@@ -530,58 +301,147 @@
             margin: 0 auto;
         }
 
-        .faq-category {
-            margin-bottom: 4rem;
-        }
-
-        .category-title {
+        .cookie-content h2 {
             color: var(--navy);
             font-size: 2rem;
-            margin-bottom: 2rem;
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
             font-family: 'Garamond', serif;
-            border-bottom: 3px solid var(--gold);
+            position: relative;
             padding-bottom: 0.5rem;
         }
 
-        .faq-item {
-            background-color: var(--cream);
-            padding: 2rem;
-            margin-bottom: 1.5rem;
-            border-radius: 8px;
-            border-left: 4px solid var(--navy);
-            box-shadow: 
-                0 1px 3px rgba(0, 0, 0, 0.05),
-                0 4px 12px rgba(44, 74, 107, 0.08),
-                0 8px 24px rgba(44, 74, 107, 0.05);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        .cookie-content h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 100%);
+            border-radius: 2px;
         }
 
-        .faq-question {
+        .cookie-content h2:first-of-type {
+            margin-top: 0;
+        }
+
+        .cookie-content h3 {
             color: var(--navy);
             font-size: 1.3rem;
-            font-weight: bold;
+            margin-top: 2rem;
             margin-bottom: 1rem;
-            font-family: 'Arial', sans-serif;
         }
 
-        .faq-answer {
+        .cookie-content p {
+            font-size: 1.05rem;
+            margin-bottom: 1.5rem;
             color: var(--text-dark);
+            font-family: 'Arial', sans-serif;
+            line-height: 1.8;
+        }
+
+        .cookie-content ul {
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .cookie-content li {
+            font-family: 'Arial', sans-serif;
             font-size: 1.05rem;
             line-height: 1.8;
+            color: var(--text-dark);
+            margin-bottom: 0.75rem;
+        }
+
+        .cookie-content a {
+            color: var(--navy);
+            text-decoration: underline;
+            transition: color 0.3s ease;
+        }
+
+        .cookie-content a:hover {
+            color: var(--gold);
+        }
+
+        .last-updated {
+            background: var(--cream);
+            padding: 1.5rem;
+            border-left: 4px solid var(--gold);
+            margin-bottom: 2rem;
+            border-radius: 4px;
+        }
+
+        .last-updated p {
+            margin-bottom: 0;
+            font-weight: 600;
+            color: var(--navy);
+        }
+
+        .contact-section {
+            background: var(--cream);
+            padding: 2rem;
+            border-radius: 8px;
+            margin-top: 3rem;
+            border: 1px solid rgba(44, 74, 107, 0.1);
+        }
+
+        .contact-section h3 {
+            color: var(--navy);
+            margin-top: 0;
+        }
+
+        .cookie-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: var(--white);
+            box-shadow: 0 2px 8px rgba(44, 74, 107, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .cookie-table th {
+            background: var(--navy);
+            color: var(--white);
+            padding: 1rem;
+            text-align: left;
             font-family: 'Arial', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
         }
 
-        .faq-answer p {
-            margin-bottom: 1rem;
+        .cookie-table td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--cream);
+            font-family: 'Arial', sans-serif;
+            font-size: 1rem;
+            line-height: 1.6;
         }
 
-        .faq-answer ul {
-            margin: 1rem 0;
-            padding-left: 2rem;
+        .cookie-table tr:last-child td {
+            border-bottom: none;
         }
 
-        .faq-answer li {
-            margin-bottom: 0.5rem;
+        .cookie-table tr:nth-child(even) {
+            background: var(--cream);
+        }
+
+        .highlight-box {
+            background: #e8f4f8;
+            border-left: 4px solid var(--navy);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 4px;
+        }
+
+        .highlight-box p {
+            margin-bottom: 0;
+            color: var(--text-dark);
+        }
+
+        .highlight-box strong {
+            color: var(--navy);
         }
 
         .cta-section {
@@ -589,6 +449,7 @@
             color: var(--white);
             padding: 5rem 2rem;
             text-align: center;
+            position: relative;
         }
 
         .cta-section h2 {
@@ -603,7 +464,6 @@
             font-family: 'Arial', sans-serif;
         }
 
-        /* Enhanced Primary Button */
         .cta-button {
             display: inline-block;
             background: linear-gradient(135deg, #c9a961 0%, #d4b76f 100%);
@@ -618,6 +478,26 @@
             border: none;
             cursor: pointer;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .cta-button:hover::before {
+            width: 400px;
+            height: 400px;
         }
 
         .cta-button:hover {
@@ -628,30 +508,6 @@
             transform: translateY(-1px);
         }
 
-        /* Secondary Button (if exists) */
-        .submit-button {
-            background: linear-gradient(135deg, #2c4a6b 0%, #3d5a7a 100%);
-            color: var(--white);
-            padding: 1rem 2.5rem;
-            border: none;
-            border-radius: 8px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            font-family: 'Arial', sans-serif;
-            box-shadow: 0 4px 12px rgba(44, 74, 107, 0.3);
-        }
-
-        .submit-button:hover {
-            background: linear-gradient(135deg, #3d5a7a 0%, #2c4a6b 100%);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(44, 74, 107, 0.4);
-        }
-
-        /* Subtle Texture on Dark Sections */
-        .hero::after,
-        .page-header::after,
         .cta-section::after {
             content: '';
             position: absolute;
@@ -672,34 +528,19 @@
             z-index: 1;
         }
 
-        .hero > *,
-        .page-header > *,
         .cta-section > * {
             position: relative;
             z-index: 2;
         }
 
-        /* Enhanced Section Backgrounds */
-        .services,
-        .about-section,
-        .portfolio-section,
-        .faq-section {
+        .cookie-content {
             background: linear-gradient(180deg, var(--white) 0%, var(--cream) 50%, var(--white) 100%);
         }
 
-        .about,
-        .testimonials-section,
-        .values-section,
-        .blog-section {
-            background: linear-gradient(180deg, var(--cream) 0%, rgba(248, 246, 240, 0.5) 50%, var(--cream) 100%);
-        }
-
-        /* Subtle Section Borders */
         section:not(.hero):not(.cta-section):not(.page-header) {
             border-bottom: 1px solid rgba(44, 74, 107, 0.05);
         }
 
-        /* Enhanced Focus States */
         *:focus-visible {
             outline: 3px solid var(--gold);
             outline-offset: 3px;
@@ -715,7 +556,6 @@
             outline-offset: 3px;
         }
 
-        /* Selection Styling */
         ::selection {
             background: var(--gold);
             color: var(--navy);
@@ -726,7 +566,6 @@
             color: var(--navy);
         }
 
-        /* Custom Scrollbar (Webkit) */
         ::-webkit-scrollbar {
             width: 12px;
         }
@@ -745,7 +584,6 @@
             background: linear-gradient(180deg, var(--light-navy) 0%, var(--navy) 100%);
         }
 
-        /* Page Load Optimization */
         body {
             animation: pageLoad 0.4s ease-out;
         }
@@ -755,7 +593,6 @@
             to { opacity: 1; }
         }
 
-        /* Prevent Layout Shift */
         img,
         iframe,
         video {
@@ -763,12 +600,10 @@
             height: auto;
         }
 
-        /* Better Link Transitions */
         a {
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        /* Print Styles */
         @media print {
             nav,
             footer,
@@ -784,14 +619,12 @@
             }
         }
 
-        /* High Contrast Support */
         @media (prefers-contrast: high) {
             .cta-button {
                 border: 2px solid currentColor;
             }
         }
 
-        /* Enhanced Footer */
         footer {
             background: linear-gradient(135deg, #333333 0%, #222222 100%);
             color: var(--white);
@@ -860,9 +693,7 @@
             margin-top: 2rem;
         }
 
-        /* Mobile-Specific Enhancements */
         @media (max-width: 768px) {
-            /* Larger Touch Targets */
             .nav-links a,
             .cta-button,
             .footer-links a {
@@ -872,48 +703,31 @@
                 justify-content: center;
             }
             
-            /* Better Mobile Typography */
             body {
-                font-size: 16px; /* Prevent zoom on input focus */
-            }
-            
-            .hero h1 {
-                font-size: 2.5rem;
-                line-height: 1.2;
-                letter-spacing: -0.5px;
-            }
-            
-            .hero p {
-                font-size: 1.15rem;
-                line-height: 1.6;
+                font-size: 16px;
             }
 
             .page-header h1 {
                 font-size: 2.2rem;
             }
-            
+
+            .page-header p {
+                font-size: 1rem;
+            }
+
             .section-title {
                 font-size: 2rem;
                 line-height: 1.3;
             }
-            
-            /* Mobile Card Spacing */
-            .service-card,
-            .blog-card,
-            .testimonial {
-                padding: 2rem;
-                margin-bottom: 1.5rem;
+
+            .cookie-content h2 {
+                font-size: 1.7rem;
+            }
+
+            .cookie-content h3 {
+                font-size: 1.2rem;
             }
             
-            /* Mobile Form Fields */
-            .form-group input,
-            .form-group textarea,
-            .form-group select {
-                font-size: 16px; /* Prevent zoom */
-                padding: 1rem;
-            }
-            
-            /* Mobile Buttons */
             .cta-button {
                 padding: 1rem 2rem;
                 font-size: 1rem;
@@ -921,21 +735,24 @@
                 max-width: 320px;
             }
             
-            /* Mobile Navigation */
             .nav-links {
                 gap: 1.2rem;
                 font-size: 0.85rem;
             }
 
-            .faq-item {
-                padding: 1.5rem;
+            .cookie-table {
+                font-size: 0.9rem;
+            }
+
+            .cookie-table th,
+            .cookie-table td {
+                padding: 0.75rem;
             }
         }
 
-        /* Tablet Optimization */
         @media (min-width: 769px) and (max-width: 1024px) {
-            .hero h1 {
-                font-size: 3.2rem;
+            .page-header h1 {
+                font-size: 2.7rem;
             }
             
             .section-title {
@@ -943,7 +760,6 @@
             }
         }
 
-        /* Mobile Floating Contact Button */
         .mobile-contact-float {
             display: none;
         }
@@ -1106,6 +922,7 @@
     </style>
 </head>
 <body>
+    <!-- Navigation -->
     <nav>
         <div class="nav-container">
             <a href="index.html" class="logo">SilokiInk</a>
@@ -1121,165 +938,283 @@
         </div>
     </nav>
 
+    <!-- Page Header -->
     <section class="page-header">
-        <h1>Frequently Asked Questions</h1>
-        <p>Everything you need to know about working with SilokiInk</p>
+        <h1>Cookie Policy</h1>
+        <p>How we use cookies to improve your experience on our website</p>
     </section>
 
-    <section class="faq-section">
+    <!-- Cookie Content -->
+    <section class="cookie-content">
         <div class="container">
-            <!-- General Questions -->
-            <div class="faq-category">
-                <h2 class="category-title">General Questions</h2>
-
-                <div class="faq-item">
-                    <div class="faq-question">What types of projects do you work on?</div>
-                    <div class="faq-answer">
-                        <p>We work across a diverse range of projects including manuscripts, business documents, academic papers, marketing materials, personal narratives, and more. Whether you're an author, business professional, academic, or individual with a story to tell, we have the expertise to help.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">How do I get started?</div>
-                    <div class="faq-answer">
-                        <p>Simply reach out through our contact page, by email, or phone. We'll schedule a free consultation to discuss your project, timeline, and goals. From there, we'll provide a customized quote and project plan tailored to your needs.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">Do you work with clients internationally?</div>
-                    <div class="faq-answer">
-                        <p>Yes! We work with clients around the world. Most of our communication and collaboration happens digitally, making it easy to work together regardless of location. For interpretation services, we can provide remote or in-person options depending on your needs.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">How long does a typical project take?</div>
-                    <div class="faq-answer">
-                        <p>Timeline varies based on project scope and service type. Copy editing a short manuscript might take 1-2 weeks, while ghostwriting a full-length book could take 6-12 months. We'll provide a detailed timeline during your consultation and work to accommodate your deadlines.</p>
-                    </div>
-                </div>
+            <div class="last-updated">
+                <p>Last Updated: February 2026</p>
             </div>
 
-            <!-- Pricing & Payment -->
-            <div class="faq-category">
-                <h2 class="category-title">Pricing & Payment</h2>
+            <p>This Cookie Policy explains how SilokiInk LLC ("we," "us," or "our") uses cookies and similar technologies on our website at <a href="https://siloki-ink.com">https://siloki-ink.com</a>. By using our website, you consent to the use of cookies as described in this policy.</p>
 
-                <div class="faq-item">
-                    <div class="faq-question">How much do your services cost?</div>
-                    <div class="faq-answer">
-                        <p>Pricing depends on the specific service, project complexity, and scope. We provide customized quotes after understanding your needs during an initial consultation. Every project is unique, and we believe in transparent, fair pricing that reflects the value we provide.</p>
-                    </div>
-                </div>
+            <h2>1. What Are Cookies?</h2>
+            <p>Cookies are small text files that are placed on your computer, smartphone, or other device when you visit a website. They are widely used to make websites work more efficiently and provide useful information to website owners.</p>
+            <p>Cookies allow websites to:</p>
+            <ul>
+                <li>Remember your preferences and settings</li>
+                <li>Improve your browsing experience</li>
+                <li>Understand how you interact with the website</li>
+                <li>Enhance website security</li>
+                <li>Analyze website traffic and performance</li>
+            </ul>
 
-                <div class="faq-item">
-                    <div class="faq-question">What payment methods do you accept?</div>
-                    <div class="faq-answer">
-                        <p>We accept various payment methods including bank transfers, credit cards, PayPal, and checks. Payment terms will be outlined in your project agreement, typically with a deposit required to begin work and final payment upon completion.</p>
-                    </div>
-                </div>
+            <h2>2. Types of Cookies We Use</h2>
+            <p>SilokiInk LLC uses minimal cookies to ensure the best possible experience while respecting your privacy. We use the following types of cookies:</p>
 
-                <div class="faq-item">
-                    <div class="faq-question">Do you offer payment plans?</div>
-                    <div class="faq-answer">
-                        <p>For larger projects, we can arrange milestone-based payment plans. This allows you to make payments as we complete specific phases of your project, making it more manageable financially while ensuring steady progress.</p>
-                    </div>
-                </div>
+            <h3>Strictly Necessary Cookies</h3>
+            <p>These cookies are essential for the website to function properly and cannot be disabled. They are typically set in response to actions you take, such as:</p>
+            <ul>
+                <li><strong>Session Cookies:</strong> Temporary cookies that expire when you close your browser, used to maintain your session as you navigate our website</li>
+                <li><strong>Security Cookies:</strong> Cookies that help protect our website and your information from security risks</li>
+            </ul>
+            <p>These cookies do not collect personally identifiable information and are necessary for basic website functionality.</p>
+
+            <h3>Analytics Cookies (Google Analytics)</h3>
+            <p>We use Google Analytics to understand how visitors use our website. These cookies collect anonymous information about:</p>
+            <ul>
+                <li>Number of visitors to our website</li>
+                <li>Pages visited and time spent on each page</li>
+                <li>How visitors arrived at our website (search engines, direct visits, referrals)</li>
+                <li>General geographic location (country and city level)</li>
+                <li>Device type and browser used</li>
+                <li>User behavior patterns and navigation paths</li>
+            </ul>
+            <p><strong>Important:</strong> Google Analytics data is collected anonymously. We use IP anonymization, which means your full IP address is never stored or associated with your data.</p>
+
+            <table class="cookie-table">
+                <thead>
+                    <tr>
+                        <th>Cookie Name</th>
+                        <th>Purpose</th>
+                        <th>Duration</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>_ga</td>
+                        <td>Distinguishes unique users and calculates visitor, session, and campaign data</td>
+                        <td>2 years</td>
+                    </tr>
+                    <tr>
+                        <td>_gid</td>
+                        <td>Distinguishes users and stores information about how visitors use the website</td>
+                        <td>24 hours</td>
+                    </tr>
+                    <tr>
+                        <td>_gat</td>
+                        <td>Used to throttle request rate to Google Analytics</td>
+                        <td>1 minute</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>3. Why We Use Cookies</h2>
+            <p>We use cookies for several important purposes:</p>
+
+            <h3>Improve User Experience</h3>
+            <p>Cookies help us understand how visitors interact with our website, allowing us to:</p>
+            <ul>
+                <li>Identify and fix technical issues</li>
+                <li>Improve website navigation and layout</li>
+                <li>Enhance content based on user interests</li>
+                <li>Optimize page loading times</li>
+            </ul>
+
+            <h3>Understand Website Traffic</h3>
+            <p>Analytics cookies provide valuable insights that help us:</p>
+            <ul>
+                <li>Understand which pages are most popular</li>
+                <li>Identify content that resonates with visitors</li>
+                <li>Measure the effectiveness of our services and marketing efforts</li>
+                <li>Make data-driven decisions about website improvements</li>
+            </ul>
+
+            <h3>Maintain Website Security</h3>
+            <p>Essential cookies help us:</p>
+            <ul>
+                <li>Protect against fraudulent activity</li>
+                <li>Ensure secure browsing sessions</li>
+                <li>Prevent unauthorized access</li>
+            </ul>
+
+            <h2>4. Google Analytics in Detail</h2>
+            <p>Google Analytics is the primary analytics tool we use to understand website performance and visitor behavior. Here's what you should know:</p>
+
+            <h3>Anonymous Data Collection</h3>
+            <div class="highlight-box">
+                <p><strong>Your privacy is protected:</strong> We have enabled IP anonymization in Google Analytics. This means your full IP address is truncated before being stored, making it impossible to identify individual users.</p>
             </div>
 
-            <!-- Editing & Writing Process -->
-            <div class="faq-category">
-                <h2 class="category-title">Editing & Writing Process</h2>
+            <h3>What Google Analytics Tracks</h3>
+            <ul>
+                <li><strong>Page Views:</strong> Which pages you visit on our website</li>
+                <li><strong>Session Duration:</strong> How long you spend on our website</li>
+                <li><strong>Bounce Rate:</strong> Whether visitors engage with multiple pages or leave after viewing one</li>
+                <li><strong>Traffic Sources:</strong> How you found our website (search engines, social media, direct visits)</li>
+                <li><strong>Device Information:</strong> Type of device, browser, screen size (no personal device identifiers)</li>
+                <li><strong>Geographic Data:</strong> Country and city level location (not precise location)</li>
+            </ul>
 
-                <div class="faq-item">
-                    <div class="faq-question">What's the difference between copy editing and proofreading?</div>
-                    <div class="faq-answer">
-                        <p>Copy editing is a comprehensive review that improves grammar, style, clarity, consistency, and flow while preserving your voice. Proofreading is the final polish, catching remaining typos, formatting issues, and minor errors before publication. Most projects benefit from copy editing first, followed by proofreading after layout.</p>
-                    </div>
-                </div>
+            <h3>What Google Analytics Does NOT Track</h3>
+            <ul>
+                <li>Personally identifiable information (names, email addresses, phone numbers)</li>
+                <li>Precise geolocation data</li>
+                <li>Financial information</li>
+                <li>Passwords or login credentials</li>
+                <li>Sensitive personal data</li>
+            </ul>
 
-                <div class="faq-item">
-                    <div class="faq-question">Will you maintain my voice and style?</div>
-                    <div class="faq-answer">
-                        <p>Absolutely. Preserving your authentic voice is a priority in all our work. Whether editing or ghostwriting, we ensure the final product sounds like you—just clearer, more polished, and more impactful. We work collaboratively and welcome your feedback throughout the process.</p>
-                    </div>
-                </div>
+            <h3>Google's Privacy Policy</h3>
+            <p>Google Analytics is operated by Google LLC. For more information about how Google uses data, please visit:</p>
+            <ul>
+                <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy Policy</a></li>
+                <li><a href="https://support.google.com/analytics/answer/6004245" target="_blank" rel="noopener noreferrer">Google Analytics Data Privacy and Security</a></li>
+            </ul>
 
-                <div class="faq-item">
-                    <div class="faq-question">How many rounds of revisions are included?</div>
-                    <div class="faq-answer">
-                        <p>This varies by service and will be specified in your project agreement. Typically, editing services include one thorough pass, while ghostwriting projects include multiple review stages with opportunities for feedback and revisions. We work with you until you're satisfied with the result.</p>
-                    </div>
-                </div>
+            <h2>5. Third-Party Cookies</h2>
+            <p>The only third-party cookies used on our website are from Google Analytics, as described above. We do not use cookies from advertising networks, social media platforms, or other third-party services that track your activity across multiple websites.</p>
+            <p>We do not allow third-party advertisers to place cookies on our website.</p>
 
-                <div class="faq-item">
-                    <div class="faq-question">Can you work with my existing manuscript or do I start from scratch?</div>
-                    <div class="faq-answer">
-                        <p>We can do both! If you have an existing draft, we can edit, restructure, or enhance it. If you're starting fresh, our ghostwriting service will help you develop your concept from the ground up. We meet you wherever you are in the process.</p>
-                    </div>
-                </div>
+            <h2>6. How to Manage and Disable Cookies</h2>
+            <p>You have the right to accept or reject cookies. Here are several ways you can manage your cookie preferences:</p>
+
+            <h3>Browser Settings</h3>
+            <p>Most web browsers allow you to control cookies through their settings. You can:</p>
+            <ul>
+                <li>Block all cookies</li>
+                <li>Block only third-party cookies</li>
+                <li>Delete cookies after each browsing session</li>
+                <li>Set exceptions for specific websites</li>
+            </ul>
+
+            <p>Here's how to manage cookies in popular browsers:</p>
+            <ul>
+                <li><strong>Google Chrome:</strong> Settings → Privacy and Security → Cookies and other site data</li>
+                <li><strong>Mozilla Firefox:</strong> Settings → Privacy & Security → Cookies and Site Data</li>
+                <li><strong>Safari:</strong> Preferences → Privacy → Cookies and website data</li>
+                <li><strong>Microsoft Edge:</strong> Settings → Cookies and site permissions → Cookies and site data</li>
+            </ul>
+
+            <p>For detailed instructions, visit your browser's help section or these resources:</p>
+            <ul>
+                <li><a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener noreferrer">Chrome Cookie Settings</a></li>
+                <li><a href="https://support.mozilla.org/en-US/kb/enhanced-tracking-protection-firefox-desktop" target="_blank" rel="noopener noreferrer">Firefox Cookie Settings</a></li>
+                <li><a href="https://support.apple.com/guide/safari/manage-cookies-sfri11471/mac" target="_blank" rel="noopener noreferrer">Safari Cookie Settings</a></li>
+                <li><a href="https://support.microsoft.com/en-us/microsoft-edge/delete-cookies-in-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09" target="_blank" rel="noopener noreferrer">Edge Cookie Settings</a></li>
+            </ul>
+
+            <h3>Google Analytics Opt-Out</h3>
+            <p>You can specifically opt out of Google Analytics tracking by:</p>
+            <ul>
+                <li>Installing the <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer">Google Analytics Opt-out Browser Add-on</a></li>
+                <li>Enabling "Do Not Track" in your browser settings (though not all websites honor this setting)</li>
+            </ul>
+
+            <h3>Mobile Device Settings</h3>
+            <p>On mobile devices, you can manage cookies through your browser app settings or device privacy settings:</p>
+            <ul>
+                <li><strong>iOS (iPhone/iPad):</strong> Settings → Safari → Block All Cookies</li>
+                <li><strong>Android:</strong> Browser app → Settings → Privacy → Clear browsing data → Cookies</li>
+            </ul>
+
+            <div class="highlight-box">
+                <p><strong>Please Note:</strong> If you disable all cookies, some parts of our website may not function properly. Strictly necessary cookies are required for basic website functionality.</p>
             </div>
 
-            <!-- Translation & Interpretation -->
-            <div class="faq-category">
-                <h2 class="category-title">Translation & Interpretation</h2>
+            <h2>7. Your Choices and Rights</h2>
+            <p>You have control over how cookies are used on your device:</p>
 
-                <div class="faq-item">
-                    <div class="faq-question">What languages do you translate?</div>
-                    <div class="faq-answer">
-                        <p>We specialize in French-English and English-French translation. Our translators are fluent in both languages and understand cultural nuances, ensuring your message resonates authentically with your target audience.</p>
-                    </div>
-                </div>
+            <h3>Right to Accept or Reject</h3>
+            <p>You can choose whether to accept cookies when you first visit our website or change your preferences at any time through your browser settings.</p>
 
-                <div class="faq-item">
-                    <div class="faq-question">How do you ensure translation accuracy?</div>
-                    <div class="faq-answer">
-                        <p>Our translators are experienced professionals who understand that translation is more than word-for-word conversion. We research industry-specific terminology, adapt for cultural context, and review thoroughly for accuracy. For critical documents, we can provide a second-translator review for added quality assurance.</p>
-                    </div>
-                </div>
+            <h3>Right to Delete</h3>
+            <p>You can delete all cookies stored on your device at any time through your browser settings.</p>
 
-                <div class="faq-item">
-                    <div class="faq-question">Do you offer interpretation for virtual meetings?</div>
-                    <div class="faq-answer">
-                        <p>Yes! We provide both in-person and remote interpretation services. For virtual meetings, we can join via video conference platforms and provide real-time interpretation, making international communication seamless.</p>
-                    </div>
-                </div>
+            <h3>Right to Opt-Out</h3>
+            <p>You can opt out of Google Analytics tracking without affecting your ability to use our website.</p>
+
+            <h3>Impact of Disabling Cookies</h3>
+            <p>If you disable cookies:</p>
+            <ul>
+                <li><strong>Essential cookies:</strong> May prevent some website features from working properly</li>
+                <li><strong>Analytics cookies:</strong> Will not affect your browsing experience, but will prevent us from understanding how to improve our website</li>
+            </ul>
+
+            <h2>8. Do Not Track Signals</h2>
+            <p>Some browsers have a "Do Not Track" (DNT) feature that signals to websites that you do not want your online activity tracked. Currently, there is no universal standard for how websites should respond to DNT signals.</p>
+            <p>While we respect your privacy choices, we do not currently respond to DNT signals because:</p>
+            <ul>
+                <li>There is no industry consensus on DNT implementation</li>
+                <li>We use minimal tracking (only Google Analytics with anonymized data)</li>
+                <li>You can opt out of Google Analytics using the methods described above</li>
+            </ul>
+
+            <h2>9. Children's Privacy</h2>
+            <p>Our website is not directed at children under the age of 18, and we do not knowingly collect information from children through cookies or any other means. If you believe we have inadvertently collected information from a child, please contact us immediately.</p>
+
+            <h2>10. International Visitors</h2>
+            <p>Our website is hosted in the United States. If you visit our website from outside the United States, please be aware that information collected through cookies may be transferred to, stored, and processed in the United States.</p>
+            <p>By using our website, you consent to the transfer of your information to the United States and the use of cookies as described in this policy.</p>
+
+            <h2>11. Updates to This Cookie Policy</h2>
+            <p>We may update this Cookie Policy from time to time to reflect changes in our practices, technology, legal requirements, or for other operational reasons.</p>
+            <p>When we make changes, we will:</p>
+            <ul>
+                <li>Update the "Last Updated" date at the top of this policy</li>
+                <li>Post the revised policy on our website</li>
+                <li>For significant changes, we may provide additional notice through our website or via email</li>
+            </ul>
+            <p>We encourage you to review this Cookie Policy periodically to stay informed about how we use cookies.</p>
+
+            <h2>12. More Information</h2>
+            <p>To learn more about cookies and online privacy, visit these resources:</p>
+            <ul>
+                <li><a href="https://www.allaboutcookies.org/" target="_blank" rel="noopener noreferrer">All About Cookies</a> - Comprehensive information about cookies</li>
+                <li><a href="https://www.youronlinechoices.com/" target="_blank" rel="noopener noreferrer">Your Online Choices</a> - Industry opt-out tool for interest-based advertising</li>
+                <li><a href="https://ico.org.uk/for-the-public/online/cookies/" target="_blank" rel="noopener noreferrer">ICO Cookie Guide</a> - UK Information Commissioner's Office guide to cookies</li>
+            </ul>
+
+            <h2>13. Contact Us</h2>
+            <div class="contact-section">
+                <h3>Questions About Our Cookie Policy?</h3>
+                <p>If you have questions or concerns about how we use cookies, or if you would like more information about your privacy rights, please contact us:</p>
+                <p>
+                    <strong>SilokiInk LLC</strong><br>
+                    1401 21st St, Ste R<br>
+                    Sacramento, CA 95811<br>
+                    Email: <a href="mailto:mart.jumbam@gmail.com">mart.jumbam@gmail.com</a><br>
+                    Website: <a href="https://siloki-ink.com">https://siloki-ink.com</a>
+                </p>
+                <p>We will respond to your inquiry as promptly as possible.</p>
             </div>
 
-            <!-- Confidentiality & Rights -->
-            <div class="faq-category">
-                <h2 class="category-title">Confidentiality & Rights</h2>
+            <h2>14. Related Policies</h2>
+            <p>For more information about how we protect your privacy, please review our related policies:</p>
+            <ul>
+                <li><a href="privacy-policy.html">Privacy Policy</a> - How we collect, use, and protect your personal information</li>
+                <li><a href="terms-and-conditions.html">Terms and Conditions</a> - Terms governing your use of our website and services</li>
+            </ul>
 
-                <div class="faq-item">
-                    <div class="faq-question">Is my work kept confidential?</div>
-                    <div class="faq-answer">
-                        <p>Absolutely. We treat all client work with strict confidentiality. We can provide a non-disclosure agreement (NDA) upon request, and we never share or repurpose your content without explicit permission.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">Who owns the rights to the finished work?</div>
-                    <div class="faq-answer">
-                        <p>You do! Upon final payment, you retain full ownership and copyright of all work we produce. For ghostwriting projects, you are the author, and we claim no ownership or credit. Your story, your rights, always.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">Can I use testimonials or samples from my project?</div>
-                    <div class="faq-answer">
-                        <p>With your permission, we occasionally showcase client work in our portfolio (with identifying details modified as needed). However, we always ask first and respect your privacy. If you prefer complete confidentiality, we honor that request fully.</p>
-                    </div>
-                </div>
+            <div class="highlight-box">
+                <p><strong>Thank you for trusting SilokiInk LLC.</strong> We are committed to transparency about our use of cookies and protecting your privacy while providing you with the best possible experience on our website.</p>
             </div>
         </div>
     </section>
 
+    <!-- Call to Action -->
     <section class="cta-section">
-        <h2>Still Have Questions?</h2>
-        <p>We're here to help. Reach out for a personalized consultation.</p>
-        <a href="contact.html" class="cta-button">Contact Us</a>
+        <h2>Ready to Work Together?</h2>
+        <p>Let's discuss how SilokiInk can help with your writing and translation projects.</p>
+        <a href="contact.html" class="cta-button">Contact Us Today</a>
     </section>
 
+    <!-- Footer -->
     <footer>
         <div class="footer-content">
             <div class="footer-links">
@@ -1290,6 +1225,10 @@
                 <a href="faq.html">FAQ</a>
                 <a href="blog.html">Blog</a>
                 <a href="contact.html">Contact</a>
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms-and-conditions.html">Terms & Conditions</a>
+                <a href="cookie-policy.html">Cookie Policy</a>
+                <a href="accessibility-statement.html">Accessibility</a>
             </div>
             <p>&copy; 2026 SilokiInk LLC. All rights reserved.</p>
         </div>

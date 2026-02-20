@@ -1,0 +1,14 @@
+This file tracks the footer update progress.
+
+Files updated with new footer:
+✅ index.html
+✅ about.html
+⏳ services.html
+⏳ portfolio.html
+⏳ faq.html
+⏳ blog.html
+⏳ contact.html
+⏳ privacy-policy.html
+⏳ terms-and-conditions.html
+⏳ cookie-policy.html
+⏳ accessibility-statement.html

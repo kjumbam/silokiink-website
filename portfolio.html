@@ -900,10 +900,9 @@
 
         /* Enhanced Footer */
         footer {
-            background: linear-gradient(135deg, #333333 0%, #222222 100%);
+            background: linear-gradient(135deg, #2c4a6b 0%, #1f3247 100%);
             color: var(--white);
             padding: 4rem 2rem 2rem;
-            text-align: center;
             border-top: 3px solid var(--gold);
             position: relative;
         }
@@ -924,59 +923,104 @@
             margin: 0 auto;
         }
 
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid rgba(201, 169, 97, 0.2);
+        }
+
+        .footer-section h3 {
+            color: var(--gold);
+            font-size: 1.1rem;
+            font-family: 'Arial', sans-serif;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
         .footer-links {
             display: flex;
-            justify-content: center;
-            gap: 2.5rem;
-            margin-bottom: 2.5rem;
-            flex-wrap: wrap;
-            padding-bottom: 2rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            flex-direction: column;
+            gap: 0.75rem;
         }
 
         .footer-links a {
-            color: rgba(255, 255, 255, 0.8);
+            color: rgba(255, 255, 255, 0.85);
             text-decoration: none;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             font-family: 'Arial', sans-serif;
+            font-size: 0.95rem;
             position: relative;
+            padding-left: 0;
+            display: inline-block;
         }
 
-        .footer-links a::after {
-            content: '';
+        .footer-links a::before {
+            content: '→';
             position: absolute;
-            bottom: -3px;
-            left: 0;
-            width: 0;
-            height: 1px;
-            background: var(--gold);
-            transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            left: -20px;
+            opacity: 0;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            color: var(--gold);
         }
 
         .footer-links a:hover {
             color: var(--gold);
+            padding-left: 20px;
         }
 
-        .footer-links a:hover::after {
-            width: 100%;
+        .footer-links a:hover::before {
+            opacity: 1;
+            left: 0;
         }
 
-        footer p {
-            color: rgba(255, 255, 255, 0.6);
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+        }
+
+        .footer-bottom p {
+            color: rgba(255, 255, 255, 0.7);
             font-size: 0.9rem;
-            margin-top: 2rem;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
         }
 
         /* Mobile-Specific Enhancements */
         @media (max-width: 768px) {
             /* Larger Touch Targets */
             .nav-links a,
-            .cta-button,
-            .footer-links a {
+            .cta-button {
                 min-height: 44px;
                 display: flex;
                 align-items: center;
                 justify-content: center;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .footer-section h3 {
+                font-size: 1rem;
+            }
+
+            .footer-links {
+                align-items: center;
+            }
+
+            .footer-links a {
+                padding-left: 0 !important;
+            }
+
+            .footer-links a::before {
+                display: none;
             }
             
             /* Better Mobile Typography */
@@ -1088,6 +1132,130 @@
             
             .mobile-contact-btn:active {
                 transform: scale(0.95);
+            }
+        }
+
+        /* Cookie Consent Banner */
+        .cookie-consent-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, #2c4a6b 0%, #1f3247 100%);
+            color: var(--white);
+            padding: 1.5rem 2rem;
+            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
+            z-index: 10000;
+            transform: translateY(100%);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            font-family: 'Arial', sans-serif;
+        }
+
+        .cookie-consent-banner.show {
+            transform: translateY(0);
+        }
+
+        .cookie-consent-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .cookie-consent-text {
+            flex: 1;
+            min-width: 300px;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        .cookie-consent-text a {
+            color: var(--gold);
+            text-decoration: underline;
+            transition: color 0.3s ease;
+        }
+
+        .cookie-consent-text a:hover {
+            color: var(--gold-light);
+        }
+
+        .cookie-consent-actions {
+            display: flex;
+            gap: 1rem;
+            flex-shrink: 0;
+        }
+
+        .cookie-consent-btn {
+            padding: 0.75rem 2rem;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            font-family: 'Arial', sans-serif;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: none;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        .cookie-consent-btn.accept {
+            background: linear-gradient(135deg, #c9a961 0%, #d4b76f 100%);
+            color: var(--navy);
+            box-shadow: 0 2px 8px rgba(201, 169, 97, 0.3);
+        }
+
+        .cookie-consent-btn.accept:hover {
+            background: linear-gradient(135deg, #d4b76f 0%, #c9a961 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(201, 169, 97, 0.4);
+        }
+
+        .cookie-consent-btn.decline {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .cookie-consent-btn.decline:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        @media (max-width: 768px) {
+            .cookie-consent-banner {
+                padding: 1.25rem 1.5rem;
+            }
+
+            .cookie-consent-content {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 1.25rem;
+            }
+
+            .cookie-consent-text {
+                min-width: auto;
+                font-size: 0.9rem;
+                text-align: center;
+            }
+
+            .cookie-consent-actions {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+
+            .cookie-consent-btn {
+                width: 100%;
+                padding: 0.875rem 1.5rem;
+                text-align: center;
+            }
+
+            .mobile-contact-float {
+                bottom: auto;
+                top: 80px;
             }
         }
     </style>
@@ -1212,16 +1380,37 @@
 
     <footer>
         <div class="footer-content">
-            <div class="footer-links">
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="services.html">Services</a>
-                <a href="portfolio.html">Portfolio</a>
-                <a href="faq.html">FAQ</a>
-                <a href="blog.html">Blog</a>
-                <a href="contact.html">Contact</a>
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>Navigation</h3>
+                    <div class="footer-links">
+                        <a href="index.html">Home</a>
+                        <a href="about.html">About</a>
+                        <a href="services.html">Services</a>
+                        <a href="portfolio.html">Portfolio</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <div class="footer-links">
+                        <a href="faq.html">FAQ</a>
+                        <a href="blog.html">Blog</a>
+                        <a href="contact.html">Contact</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <div class="footer-links">
+                        <a href="privacy-policy.html">Privacy Policy</a>
+                        <a href="terms-and-conditions.html">Terms & Conditions</a>
+                        <a href="cookie-policy.html">Cookie Policy</a>
+                        <a href="accessibility-statement.html">Accessibility</a>
+                    </div>
+                </div>
             </div>
-            <p>&copy; 2026 SilokiInk LLC. All rights reserved.</p>
+            <div class="footer-bottom">
+                <p>&copy; 2026 SilokiInk LLC. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 
@@ -1230,5 +1419,59 @@
             📞 Call Us
         </a>
     </div>
+
+    <!-- Cookie Consent Banner -->
+    <div class="cookie-consent-banner" id="cookieConsent">
+        <div class="cookie-consent-content">
+            <div class="cookie-consent-text">
+                We use cookies to improve your experience and analyze site traffic. By continuing to use this site, you consent to our use of cookies. 
+                <a href="cookie-policy.html">Learn more</a>
+            </div>
+            <div class="cookie-consent-actions">
+                <button class="cookie-consent-btn accept" onclick="acceptCookies()">Accept</button>
+                <button class="cookie-consent-btn decline" onclick="declineCookies()">Decline</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function checkCookieConsent() {
+            const consent = localStorage.getItem('cookieConsent');
+            if (!consent) {
+                setTimeout(function() {
+                    document.getElementById('cookieConsent').classList.add('show');
+                }, 1000);
+            }
+        }
+
+        function acceptCookies() {
+            localStorage.setItem('cookieConsent', 'accepted');
+            localStorage.setItem('cookieConsentDate', new Date().toISOString());
+            hideCookieBanner();
+            console.log('Cookies accepted');
+        }
+
+        function declineCookies() {
+            localStorage.setItem('cookieConsent', 'declined');
+            localStorage.setItem('cookieConsentDate', new Date().toISOString());
+            hideCookieBanner();
+            console.log('Cookies declined');
+            if (typeof ga !== 'undefined') {
+                window['ga-disable-UA-XXXXXX-X'] = true;
+            }
+        }
+
+        function hideCookieBanner() {
+            const banner = document.getElementById('cookieConsent');
+            banner.classList.remove('show');
+            setTimeout(function() {
+                banner.style.display = 'none';
+            }, 400);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            checkCookieConsent();
+        });
+    </script>
 </body>
 </html>
