@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <title>SilokiInk LLC - Professional Writing & Translation Services</title>
     <style>
         * {
@@ -15,6 +15,8 @@
         html {
             scroll-behavior: smooth;
             scroll-padding-top: 80px; /* Account for sticky nav */
+            touch-action: manipulation;
+            -ms-touch-action: manipulation;
         }
 
         /* Smooth Scroll for Anchor Links */
@@ -49,6 +51,109 @@
             --space-2xl: 6rem;    /* 96px */
             --space-3xl: 8rem;    /* 128px */
         }
+
+        /* ===== iOS TOUCH OPTIMIZATION ===== */
+
+        /* Fast tap for all interactive elements */
+        a, button, input, select, textarea,
+        .cta-button, .mobile-menu-toggle, .mobile-menu-close,
+        .mobile-menu-links a, .nav-links a, .service-card {
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: rgba(201, 169, 97, 0.2);
+            cursor: pointer;
+        }
+
+        /* Remove iOS default button styling */
+        button, input[type="submit"], .cta-button {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+        }
+
+        /* Ensure minimum touch targets - Apple guideline is 44x44px */
+        button, a, .cta-button, .mobile-menu-toggle, .mobile-menu-close {
+            min-width: 44px;
+            min-height: 44px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Strong visual feedback on touch */
+        .cta-button:active,
+        button:active,
+        .mobile-menu-toggle:active,
+        .mobile-menu-close:active {
+            transform: scale(0.96);
+            opacity: 0.8;
+            transition: all 0.1s ease;
+        }
+
+        .mobile-menu-links a:active,
+        .nav-links a:active,
+        a:active {
+            opacity: 0.7;
+            background: rgba(201, 169, 97, 0.1);
+        }
+
+        .service-card:active {
+            transform: translateY(2px);
+        }
+
+        /* Prevent text selection on tap */
+        .mobile-menu-toggle,
+        .mobile-menu-close,
+        .cta-button,
+        button {
+            -webkit-user-select: none;
+            user-select: none;
+        }
+
+        /* Increase hamburger menu tap area */
+        .mobile-menu-toggle {
+            padding: 12px;
+            min-width: 60px;
+            min-height: 60px;
+            font-size: 2.2rem;
+        }
+
+        .mobile-menu-close {
+            padding: 12px;
+            min-width: 60px;
+            min-height: 60px;
+            font-size: 2.5rem;
+        }
+
+        /* Mobile menu links - bigger tap targets */
+        .mobile-menu-links a {
+            padding: 1.5rem 2rem;
+            min-height: 60px;
+            font-size: 1.2rem;
+        }
+
+        /* CTA button - bigger on mobile */
+        @media (max-width: 768px) {
+            .cta-button {
+                padding: 1.3rem 2.5rem;
+                min-height: 56px;
+                font-size: 1.15rem;
+                width: 100%;
+                max-width: 400px;
+            }
+
+            .mobile-contact-btn {
+                min-height: 56px;
+                padding: 1.2rem 2rem;
+                font-size: 1.05rem;
+            }
+        }
+
+        /* Prevent double-tap zoom on buttons */
+        button, .cta-button, .mobile-menu-toggle, .mobile-menu-close {
+            touch-action: manipulation;
+        }
+
+        /* ===== END iOS TOUCH OPTIMIZATION ===== */
 
         /* Enhanced Body Text */
         body {
@@ -508,11 +613,13 @@
             background: none;
             border: none;
             color: var(--gold);
-            font-size: 2rem;
+            font-size: 2.2rem;
             cursor: pointer;
-            padding: 0.5rem;
-            width: 44px;
-            height: 44px;
+            padding: 12px;
+            min-width: 60px;
+            min-height: 60px;
+            width: 60px;
+            height: 60px;
             align-items: center;
             justify-content: center;
             transition: all 0.3s ease;
@@ -588,10 +695,13 @@
             background: none;
             border: none;
             color: var(--gold);
-            font-size: 2rem;
+            font-size: 2.5rem;
             cursor: pointer;
-            width: 44px;
-            height: 44px;
+            padding: 12px;
+            min-width: 60px;
+            min-height: 60px;
+            width: 60px;
+            height: 60px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -619,16 +729,17 @@
         }
 
         .mobile-menu-links a {
-            display: block;
+            display: flex;
             color: var(--gold);
             text-decoration: none;
-            padding: 1.25rem 2rem;
+            padding: 1.5rem 2rem;
             font-family: 'Arial', sans-serif;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             font-weight: 600;
             transition: all 0.3s ease;
-            min-height: 44px;
+            min-height: 60px;
             text-align: left;
+            align-items: center;
             -webkit-tap-highlight-color: rgba(201, 169, 97, 0.2);
             touch-action: manipulation;
         }
@@ -1693,91 +1804,120 @@
     </script>
 
     <script>
-        // Mobile Menu Functionality - iOS Safari Optimized
-        document.addEventListener('DOMContentLoaded', function() {
-            console.log('Mobile menu initialized');
+        // Mobile Menu - Optimized for iOS Touch
+        (function() {
+            'use strict';
             
-            const menuToggle = document.getElementById('mobileMenuToggle');
-            const menuClose = document.getElementById('mobileMenuClose');
-            const mobileMenu = document.getElementById('mobileMenu');
-            const menuOverlay = document.getElementById('mobileMenuOverlay');
-            const menuLinks = document.querySelectorAll('.mobile-menu-links a');
-
-            // Verify elements exist
-            if (!menuToggle || !menuClose || !mobileMenu || !menuOverlay) {
-                console.error('Mobile menu elements not found');
-                return;
+            console.log('Mobile menu initializing...');
+            
+            // Wait for DOM
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', initMenu);
+            } else {
+                initMenu();
             }
-
-            console.log('All menu elements found');
-
-            function openMenu() {
-                console.log('Opening menu');
-                menuOverlay.style.display = 'block';
-                mobileMenu.style.display = 'block';
+            
+            function initMenu() {
+                const menuToggle = document.getElementById('mobileMenuToggle');
+                const menuClose = document.getElementById('mobileMenuClose');
+                const mobileMenu = document.getElementById('mobileMenu');
+                const menuOverlay = document.getElementById('mobileMenuOverlay');
+                const menuLinks = document.querySelectorAll('.mobile-menu-links a');
                 
-                // Force browser reflow
-                menuOverlay.offsetHeight;
-                mobileMenu.offsetHeight;
-                
-                requestAnimationFrame(function() {
-                    menuOverlay.classList.add('active');
-                    mobileMenu.classList.add('active');
-                    document.body.style.overflow = 'hidden';
-                });
-            }
-
-            function closeMenu() {
-                console.log('Closing menu');
-                menuOverlay.classList.remove('active');
-                mobileMenu.classList.remove('active');
-                document.body.style.overflow = '';
-                
-                setTimeout(function() {
-                    menuOverlay.style.display = 'none';
-                    mobileMenu.style.display = 'none';
-                }, 300);
-            }
-
-            // Use 'click' only - works on both desktop and mobile
-            menuToggle.addEventListener('click', function(e) {
-                e.preventDefault();
-                e.stopPropagation();
-                console.log('Hamburger tapped');
-                openMenu();
-            });
-
-            menuClose.addEventListener('click', function(e) {
-                e.preventDefault();
-                e.stopPropagation();
-                console.log('Close button tapped');
-                closeMenu();
-            });
-
-            menuOverlay.addEventListener('click', function(e) {
-                if (e.target === menuOverlay) {
-                    console.log('Overlay tapped');
-                    closeMenu();
+                if (!menuToggle || !menuClose || !mobileMenu || !menuOverlay) {
+                    console.error('Menu elements missing');
+                    return;
                 }
-            });
-
-            // Close menu when link is clicked
-            menuLinks.forEach(function(link) {
-                link.addEventListener('click', function() {
-                    console.log('Link tapped');
-                    closeMenu();
-                });
-            });
-
-            // Close on Escape key
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
-                    closeMenu();
+                
+                console.log('Menu elements found - ready');
+                
+                let isOpen = false;
+                let isAnimating = false;
+                
+                function openMenu(e) {
+                    if (e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                    }
+                    
+                    if (isAnimating || isOpen) return;
+                    
+                    console.log('Opening menu');
+                    isAnimating = true;
+                    isOpen = true;
+                    
+                    menuOverlay.style.display = 'block';
+                    mobileMenu.style.display = 'block';
+                    
+                    // Force reflow
+                    void menuOverlay.offsetHeight;
+                    
+                    requestAnimationFrame(function() {
+                        menuOverlay.classList.add('active');
+                        mobileMenu.classList.add('active');
+                        document.body.style.overflow = 'hidden';
+                        
+                        setTimeout(function() {
+                            isAnimating = false;
+                        }, 350);
+                    });
                 }
-            });
-
-            console.log('Mobile menu ready');
-        });
+                
+                function closeMenu(e) {
+                    if (e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                    }
+                    
+                    if (isAnimating || !isOpen) return;
+                    
+                    console.log('Closing menu');
+                    isAnimating = true;
+                    isOpen = false;
+                    
+                    menuOverlay.classList.remove('active');
+                    mobileMenu.classList.remove('active');
+                    document.body.style.overflow = '';
+                    
+                    setTimeout(function() {
+                        menuOverlay.style.display = 'none';
+                        mobileMenu.style.display = 'none';
+                        isAnimating = false;
+                    }, 350);
+                }
+                
+                // Hamburger button
+                menuToggle.addEventListener('click', openMenu, false);
+                
+                // Close button
+                menuClose.addEventListener('click', closeMenu, false);
+                
+                // Overlay
+                menuOverlay.addEventListener('click', function(e) {
+                    if (e.target === menuOverlay) {
+                        closeMenu(e);
+                    }
+                }, false);
+                
+                // Menu links
+                menuLinks.forEach(function(link) {
+                    link.addEventListener('click', function(e) {
+                        console.log('Link clicked:', link.textContent);
+                        closeMenu();
+                        // Let the link navigate normally
+                    }, false);
+                });
+                
+                // Escape key
+                document.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape' && isOpen) {
+                        closeMenu();
+                    }
+                }, false);
+                
+                console.log('Menu ready!');
+            }
+        })();
     </script>
 </body>
 </html>
