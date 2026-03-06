@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SilokiInk LLC - Professional Writing & Translation Services</title>
     <style>
         * {
@@ -51,109 +51,6 @@
             --space-2xl: 6rem;    /* 96px */
             --space-3xl: 8rem;    /* 128px */
         }
-
-        /* ===== iOS TOUCH OPTIMIZATION ===== */
-
-        /* Fast tap for all interactive elements */
-        a, button, input, select, textarea,
-        .cta-button, .mobile-menu-toggle, .mobile-menu-close,
-        .mobile-menu-links a, .nav-links a, .service-card {
-            touch-action: manipulation;
-            -webkit-tap-highlight-color: rgba(201, 169, 97, 0.2);
-            cursor: pointer;
-        }
-
-        /* Remove iOS default button styling */
-        button, input[type="submit"], .cta-button {
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            appearance: none;
-        }
-
-        /* Ensure minimum touch targets - Apple guideline is 44x44px */
-        button, a, .cta-button, .mobile-menu-toggle, .mobile-menu-close {
-            min-width: 44px;
-            min-height: 44px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        /* Strong visual feedback on touch */
-        .cta-button:active,
-        button:active,
-        .mobile-menu-toggle:active,
-        .mobile-menu-close:active {
-            transform: scale(0.96);
-            opacity: 0.8;
-            transition: all 0.1s ease;
-        }
-
-        .mobile-menu-links a:active,
-        .nav-links a:active,
-        a:active {
-            opacity: 0.7;
-            background: rgba(201, 169, 97, 0.1);
-        }
-
-        .service-card:active {
-            transform: translateY(2px);
-        }
-
-        /* Prevent text selection on tap */
-        .mobile-menu-toggle,
-        .mobile-menu-close,
-        .cta-button,
-        button {
-            -webkit-user-select: none;
-            user-select: none;
-        }
-
-        /* Increase hamburger menu tap area */
-        .mobile-menu-toggle {
-            padding: 12px;
-            min-width: 60px;
-            min-height: 60px;
-            font-size: 2.2rem;
-        }
-
-        .mobile-menu-close {
-            padding: 12px;
-            min-width: 60px;
-            min-height: 60px;
-            font-size: 2.5rem;
-        }
-
-        /* Mobile menu links - bigger tap targets */
-        .mobile-menu-links a {
-            padding: 1.5rem 2rem;
-            min-height: 60px;
-            font-size: 1.2rem;
-        }
-
-        /* CTA button - bigger on mobile */
-        @media (max-width: 768px) {
-            .cta-button {
-                padding: 1.3rem 2.5rem;
-                min-height: 56px;
-                font-size: 1.15rem;
-                width: 100%;
-                max-width: 400px;
-            }
-
-            .mobile-contact-btn {
-                min-height: 56px;
-                padding: 1.2rem 2rem;
-                font-size: 1.05rem;
-            }
-        }
-
-        /* Prevent double-tap zoom on buttons */
-        button, .cta-button, .mobile-menu-toggle, .mobile-menu-close {
-            touch-action: manipulation;
-        }
-
-        /* ===== END iOS TOUCH OPTIMIZATION ===== */
 
         /* Enhanced Body Text */
         body {
@@ -613,26 +510,21 @@
             background: none;
             border: none;
             color: var(--gold);
-            font-size: 2.2rem;
+            font-size: 2rem;
             cursor: pointer;
-            padding: 12px;
-            min-width: 60px;
-            min-height: 60px;
-            width: 60px;
-            height: 60px;
+            padding: 0.5rem;
+            width: 50px;
+            height: 50px;
             align-items: center;
             justify-content: center;
             transition: all 0.3s ease;
             position: relative;
             z-index: 10;
-            -webkit-tap-highlight-color: rgba(201, 169, 97, 0.3);
-            touch-action: manipulation;
         }
 
         .mobile-menu-toggle:hover,
         .mobile-menu-toggle:active {
             color: var(--gold-light);
-            transform: scale(1.1);
         }
 
         .mobile-menu-overlay {
@@ -695,13 +587,11 @@
             background: none;
             border: none;
             color: var(--gold);
-            font-size: 2.5rem;
+            font-size: 2rem;
             cursor: pointer;
-            padding: 12px;
-            min-width: 60px;
-            min-height: 60px;
-            width: 60px;
-            height: 60px;
+            padding: 0.5rem;
+            width: 50px;
+            height: 50px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -709,14 +599,11 @@
             line-height: 1;
             position: relative;
             z-index: 10000;
-            -webkit-tap-highlight-color: rgba(201, 169, 97, 0.3);
-            touch-action: manipulation;
         }
 
         .mobile-menu-close:hover,
         .mobile-menu-close:active {
             color: var(--gold-light);
-            transform: rotate(90deg);
         }
 
         .mobile-menu-links {
@@ -729,19 +616,16 @@
         }
 
         .mobile-menu-links a {
-            display: flex;
+            display: block;
             color: var(--gold);
             text-decoration: none;
-            padding: 1.5rem 2rem;
+            padding: 1.25rem 2rem;
             font-family: 'Arial', sans-serif;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: 600;
             transition: all 0.3s ease;
-            min-height: 60px;
+            min-height: 50px;
             text-align: left;
-            align-items: center;
-            -webkit-tap-highlight-color: rgba(201, 169, 97, 0.2);
-            touch-action: manipulation;
         }
 
         .mobile-menu-links a:hover,
@@ -1804,120 +1688,64 @@
     </script>
 
     <script>
-        // Mobile Menu - Optimized for iOS Touch
-        (function() {
-            'use strict';
+        // Simple Mobile Menu - Works Reliably on iOS
+        document.addEventListener('DOMContentLoaded', function() {
+            var menuToggle = document.getElementById('mobileMenuToggle');
+            var menuClose = document.getElementById('mobileMenuClose');
+            var mobileMenu = document.getElementById('mobileMenu');
+            var menuOverlay = document.getElementById('mobileMenuOverlay');
+            var menuLinks = document.querySelectorAll('.mobile-menu-links a');
             
-            console.log('Mobile menu initializing...');
-            
-            // Wait for DOM
-            if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', initMenu);
-            } else {
-                initMenu();
+            if (!menuToggle || !menuClose || !mobileMenu || !menuOverlay) {
+                return;
             }
             
-            function initMenu() {
-                const menuToggle = document.getElementById('mobileMenuToggle');
-                const menuClose = document.getElementById('mobileMenuClose');
-                const mobileMenu = document.getElementById('mobileMenu');
-                const menuOverlay = document.getElementById('mobileMenuOverlay');
-                const menuLinks = document.querySelectorAll('.mobile-menu-links a');
-                
-                if (!menuToggle || !menuClose || !mobileMenu || !menuOverlay) {
-                    console.error('Menu elements missing');
-                    return;
-                }
-                
-                console.log('Menu elements found - ready');
-                
-                let isOpen = false;
-                let isAnimating = false;
-                
-                function openMenu(e) {
-                    if (e) {
-                        e.preventDefault();
-                        e.stopPropagation();
-                    }
-                    
-                    if (isAnimating || isOpen) return;
-                    
-                    console.log('Opening menu');
-                    isAnimating = true;
-                    isOpen = true;
-                    
-                    menuOverlay.style.display = 'block';
-                    mobileMenu.style.display = 'block';
-                    
-                    // Force reflow
-                    void menuOverlay.offsetHeight;
-                    
-                    requestAnimationFrame(function() {
-                        menuOverlay.classList.add('active');
-                        mobileMenu.classList.add('active');
-                        document.body.style.overflow = 'hidden';
-                        
-                        setTimeout(function() {
-                            isAnimating = false;
-                        }, 350);
-                    });
-                }
-                
-                function closeMenu(e) {
-                    if (e) {
-                        e.preventDefault();
-                        e.stopPropagation();
-                    }
-                    
-                    if (isAnimating || !isOpen) return;
-                    
-                    console.log('Closing menu');
-                    isAnimating = true;
-                    isOpen = false;
-                    
-                    menuOverlay.classList.remove('active');
-                    mobileMenu.classList.remove('active');
-                    document.body.style.overflow = '';
-                    
-                    setTimeout(function() {
-                        menuOverlay.style.display = 'none';
-                        mobileMenu.style.display = 'none';
-                        isAnimating = false;
-                    }, 350);
-                }
-                
-                // Hamburger button
-                menuToggle.addEventListener('click', openMenu, false);
-                
-                // Close button
-                menuClose.addEventListener('click', closeMenu, false);
-                
-                // Overlay
-                menuOverlay.addEventListener('click', function(e) {
-                    if (e.target === menuOverlay) {
-                        closeMenu(e);
-                    }
-                }, false);
-                
-                // Menu links
-                menuLinks.forEach(function(link) {
-                    link.addEventListener('click', function(e) {
-                        console.log('Link clicked:', link.textContent);
-                        closeMenu();
-                        // Let the link navigate normally
-                    }, false);
-                });
-                
-                // Escape key
-                document.addEventListener('keydown', function(e) {
-                    if (e.key === 'Escape' && isOpen) {
-                        closeMenu();
-                    }
-                }, false);
-                
-                console.log('Menu ready!');
+            function openMenu() {
+                menuOverlay.style.display = 'block';
+                mobileMenu.style.display = 'block';
+                setTimeout(function() {
+                    menuOverlay.classList.add('active');
+                    mobileMenu.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                }, 10);
             }
-        })();
+            
+            function closeMenu() {
+                menuOverlay.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = '';
+                setTimeout(function() {
+                    menuOverlay.style.display = 'none';
+                    mobileMenu.style.display = 'none';
+                }, 300);
+            }
+            
+            // Use simple onclick - most reliable on iOS
+            menuToggle.onclick = function(e) {
+                e.preventDefault();
+                openMenu();
+                return false;
+            };
+            
+            menuClose.onclick = function(e) {
+                e.preventDefault();
+                closeMenu();
+                return false;
+            };
+            
+            menuOverlay.onclick = function(e) {
+                if (e.target === menuOverlay) {
+                    closeMenu();
+                }
+            };
+            
+            // Close menu when link is clicked
+            for (var i = 0; i < menuLinks.length; i++) {
+                menuLinks[i].onclick = function() {
+                    closeMenu();
+                };
+            }
+        });
     </script>
 </body>
 </html>
