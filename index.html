@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SilokiInk LLC - Professional Writing & Translation Services</title>
     <style>
         * {
@@ -512,18 +512,20 @@
             color: var(--gold);
             font-size: 2rem;
             cursor: pointer;
-            padding: 12px;
+            padding: 0.5rem;
+            width: 44px;
+            height: 44px;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
             position: relative;
             z-index: 10;
-            -webkit-tap-highlight-color: transparent;
-            -webkit-touch-callout: none;
-            -webkit-user-select: none;
-            user-select: none;
         }
 
         .mobile-menu-toggle:hover,
         .mobile-menu-toggle:active {
             color: var(--gold-light);
+            transform: scale(1.1);
         }
 
         .mobile-menu-overlay {
@@ -537,11 +539,11 @@
             z-index: 9998;
             opacity: 0;
             transition: opacity 0.3s ease;
+            -webkit-overflow-scrolling: touch;
         }
 
         .mobile-menu-overlay.active {
             opacity: 1;
-            display: block;
         }
 
         .mobile-menu {
@@ -552,10 +554,11 @@
             width: 80%;
             max-width: 350px;
             height: 100vh;
+            height: 100dvh;
             background: linear-gradient(135deg, #2c4a6b 0%, #1f3247 100%);
             z-index: 9999;
             transform: translateX(100%);
-            transition: transform 0.3s ease;
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             box-shadow: -4px 0 20px rgba(0, 0, 0, 0.3);
             overflow-y: auto;
             -webkit-overflow-scrolling: touch;
@@ -563,7 +566,6 @@
 
         .mobile-menu.active {
             transform: translateX(0);
-            display: block;
         }
 
         .mobile-menu-header {
@@ -588,18 +590,21 @@
             color: var(--gold);
             font-size: 2rem;
             cursor: pointer;
-            padding: 12px;
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            line-height: 1;
             position: relative;
-            z-index: 10001;
-            -webkit-tap-highlight-color: transparent;
-            -webkit-touch-callout: none;
-            -webkit-user-select: none;
-            user-select: none;
+            z-index: 10000;
         }
 
         .mobile-menu-close:hover,
         .mobile-menu-close:active {
             color: var(--gold-light);
+            transform: rotate(90deg);
         }
 
         .mobile-menu-links {
@@ -620,7 +625,7 @@
             font-size: 1.1rem;
             font-weight: 600;
             transition: all 0.3s ease;
-            min-height: 50px;
+            min-height: 44px;
             text-align: left;
         }
 
@@ -681,17 +686,15 @@
             font-family: 'Arial', sans-serif;
             border: none;
             cursor: pointer;
-            transition: opacity 0.2s ease;
-            -webkit-tap-highlight-color: rgba(201, 169, 97, 0.3);
-            -webkit-touch-callout: none;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .cta-button:hover {
-            opacity: 0.9;
+            transform: translateY(-3px);
         }
 
         .cta-button:active {
-            opacity: 0.8;
+            transform: translateY(-1px);
         }
 
         /* Secondary Button (if exists) */
@@ -981,33 +984,6 @@
 
         /* Disable Text Selection on Buttons */
         button,
-        .cta-button,
-        .mobile-menu-toggle,
-        .mobile-menu-close {
-            -webkit-touch-callout: none;
-            -webkit-user-select: none;
-            user-select: none;
-        }
-
-        /* Mobile Touch Active States */
-        @media (hover: none) and (pointer: coarse) {
-            .cta-button:active {
-                opacity: 0.8;
-            }
-
-            .service-card:active,
-            .blog-card:active {
-                opacity: 0.9;
-            }
-
-            a:active {
-                opacity: 0.7;
-            }
-
-            button:active {
-                opacity: 0.8;
-            }
-        }
 
         /* Better Link Transitions */
         a {
@@ -1685,117 +1661,98 @@
     </script>
 
     <script>
-        // Bulletproof Mobile Menu for iOS Safari
-        (function() {
-            'use strict';
+        // Mobile Menu Functionality - iOS Safari Compatible
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Mobile menu script loaded');
             
-            // Wait for full DOM load
-            if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', init);
-            } else {
-                init();
+            const menuToggle = document.getElementById('mobileMenuToggle');
+            const menuClose = document.getElementById('mobileMenuClose');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const menuOverlay = document.getElementById('mobileMenuOverlay');
+            const menuLinks = document.querySelectorAll('.mobile-menu-links a');
+
+            console.log('Menu elements found:', {
+                menuToggle: !!menuToggle,
+                menuClose: !!menuClose,
+                mobileMenu: !!mobileMenu,
+                menuOverlay: !!menuOverlay,
+                linksCount: menuLinks.length
+            });
+
+            function openMobileMenu(e) {
+                if (e) e.preventDefault();
+                console.log('Opening mobile menu');
+                
+                menuOverlay.style.display = 'block';
+                mobileMenu.style.display = 'block';
+                
+                // Force reflow for iOS Safari
+                void menuOverlay.offsetHeight;
+                void mobileMenu.offsetHeight;
+                
+                setTimeout(function() {
+                    menuOverlay.classList.add('active');
+                    mobileMenu.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                }, 10);
             }
-            
-            function init() {
-                var toggle = document.getElementById('mobileMenuToggle');
-                var close = document.getElementById('mobileMenuClose');
-                var menu = document.getElementById('mobileMenu');
-                var overlay = document.getElementById('mobileMenuOverlay');
-                var links = document.querySelectorAll('.mobile-menu-links a');
+
+            function closeMobileMenu(e) {
+                if (e) e.preventDefault();
+                console.log('Closing mobile menu');
                 
-                if (!toggle || !close || !menu || !overlay) {
-                    console.error('Menu elements not found');
-                    return;
-                }
+                menuOverlay.classList.remove('active');
+                mobileMenu.classList.remove('active');
                 
-                console.log('Menu initialized');
-                
-                var isOpen = false;
-                
-                function open() {
-                    if (isOpen) return;
-                    console.log('Opening menu');
-                    isOpen = true;
-                    
-                    // Set display first
-                    overlay.style.display = 'block';
-                    menu.style.display = 'block';
-                    
-                    // Then trigger animation
-                    setTimeout(function() {
-                        overlay.classList.add('active');
-                        menu.classList.add('active');
-                        document.body.style.overflow = 'hidden';
-                    }, 10);
-                }
-                
-                function close_menu() {
-                    if (!isOpen) return;
-                    console.log('Closing menu');
-                    isOpen = false;
-                    
-                    overlay.classList.remove('active');
-                    menu.classList.remove('active');
+                setTimeout(function() {
+                    menuOverlay.style.display = 'none';
+                    mobileMenu.style.display = 'none';
                     document.body.style.overflow = '';
-                    
-                    setTimeout(function() {
-                        overlay.style.display = 'none';
-                        menu.style.display = 'none';
-                    }, 300);
-                }
-                
-                // Primary event: touchend (most reliable on iOS)
-                toggle.addEventListener('touchend', function(e) {
-                    e.preventDefault();
-                    console.log('Toggle touched');
-                    open();
-                }, false);
-                
-                // Fallback: click (for desktop)
-                toggle.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    console.log('Toggle clicked');
-                    if (!isOpen) open();
-                }, false);
-                
-                // Close button
-                close.addEventListener('touchend', function(e) {
-                    e.preventDefault();
-                    console.log('Close touched');
-                    close_menu();
-                }, false);
-                
-                close.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    console.log('Close clicked');
-                    if (isOpen) close_menu();
-                }, false);
-                
-                // Overlay
-                overlay.addEventListener('touchend', function(e) {
-                    if (e.target === overlay) {
-                        e.preventDefault();
-                        close_menu();
-                    }
-                }, false);
-                
-                overlay.addEventListener('click', function(e) {
-                    if (e.target === overlay) {
-                        close_menu();
-                    }
-                }, false);
-                
-                // Menu links
-                for (var i = 0; i < links.length; i++) {
-                    links[i].addEventListener('touchend', function() {
-                        console.log('Link touched');
-                        close_menu();
-                    }, false);
-                }
-                
-                console.log('Menu ready');
+                }, 300);
             }
-        })();
+
+            // Hamburger button - click events
+            if (menuToggle) {
+                menuToggle.addEventListener('click', function(e) {
+                    console.log('Hamburger clicked');
+                    openMobileMenu(e);
+                });
+            }
+
+            // Close button - click events
+            if (menuClose) {
+                menuClose.addEventListener('click', function(e) {
+                    console.log('Close button clicked');
+                    closeMobileMenu(e);
+                });
+            }
+
+            // Overlay - click events
+            if (menuOverlay) {
+                menuOverlay.addEventListener('click', function(e) {
+                    if (e.target === menuOverlay) {
+                        console.log('Overlay clicked');
+                        closeMobileMenu(e);
+                    }
+                });
+            }
+
+            // Menu links - close on click
+            menuLinks.forEach(function(link) {
+                link.addEventListener('click', function() {
+                    console.log('Menu link clicked');
+                    closeMobileMenu();
+                });
+            });
+
+            // Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+                    console.log('Escape key pressed');
+                    closeMobileMenu();
+                }
+            });
+        });
     </script>
 </body>
 </html>
